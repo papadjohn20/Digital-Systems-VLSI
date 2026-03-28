@@ -1,0 +1,47 @@
+* SPICE3 file created from partC_n.ext - technology: scmos
+
+.INC models_0.25.sp
+.option scale=0.0625u
+.param t=1000n
+
+
+M1000 WL OUT gnd gnd nfet w=300 l=200
++  ad=190000 pd=1800 as=380000 ps=3600
+M1001 a_14_0# A1 a_4_0# gnd nfet w=300 l=200
++  ad=280000 pd=2400 as=280000 ps=2400
+M1002 a_n48_n21# a_n54_n14# a_n55_n7# Vdd pfet w=600 l=200
++  ad=300000 pd=2200 as=300000 ps=2200
+M1003 OUT A0 a_14_0# gnd nfet w=300 l=200
++  ad=190000 pd=1800 as=0 ps=0
+M1004 OUT Clk VDD VDD pfet w=400 l=200
++  ad=200000 pd=1800 as=500000 ps=4000
+M1005 a_4_0# A2 a_n12_0# gnd nfet w=300 l=200
++  ad=0 pd=0 as=380000 ps=3600
+M1006 a_n48_n21# a_n54_n14# a_n55_n21# Gnd nfet w=300 l=200
++  ad=190000 pd=1800 as=190000 ps=1800
+M1007 WL OUT VDD VDD pfet w=600 l=200
++  ad=300000 pd=2200 as=0 ps=0
+M1008 a_n12_0# Clk gnd gnd nfet w=300 l=200
++  ad=0 pd=0 as=0 ps=0
+C0 OUT VDD 10.92fF
+C1 a_n54_n14# Gnd 5.98fF
+C2 A0 Gnd 3.02fF
+C3 A1 Gnd 3.02fF
+C4 A2 Gnd 3.02fF
+C5 Clk Gnd 3.01fF
+C6 OUT Gnd 6.28fF
+C7 VDD Gnd 2.07fF
+
+*---- Actual test ----
+Vdd VDD 0 DC 2.5
+VA0 A0 0 PULSE (0 2.5 {t} 1p 1p {t} {2*t})
+VA1 A1 0 PULSE (0 2.5 {2*t} 1p 1p {2*t} {4*t})
+VA2 A2 0 PULSE (0 2.5 {4*t} 1p 1p {4*t} {8*t})
+VClk Clk 0 PULSE (0 2.5 {8*t} 1p 1p {8*t} {16*t})
+
+
+.tran 0.001 {16*t}
+.control
+    run
+    plot v(WL) v(OUT)+4 v(Clk)+8 v(A2)+12 v(A1)+16 v(A0)+20
+.endc

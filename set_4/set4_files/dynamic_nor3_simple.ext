@@ -1,0 +1,33 @@
+timestamp 1765564929
+version 8.3
+tech scmos
+style lambda=1.0(scna20_orb)
+scale 1000 1 100
+resistclasses 26670 59550 23860 19690 27260 2000000 49 26 2505830
+node "A0" 128 4070 10 4 p 0 0 0 0 34 32 0 0 0 0 0 0 44 30 104 60 0 0
+node "a_n26_6#" 331 0 -26 6 ndiff 80 68 0 0 0 0 0 0 0 0 0 0 252 134 0 0 0 0
+node "A1" 128 4258 -3 11 pc 0 0 0 0 34 32 0 0 0 0 0 0 48 32 104 60 0 0
+node "A2" 127 3754 -10 4 p 0 0 0 0 30 30 0 0 0 0 0 0 44 30 104 60 0 0
+node "OUT" 285 13771 -26 32 pdiff 53 46 20 18 0 0 0 0 0 0 0 0 341 188 0 0 0 0
+node "Clk" 416 6432 -30 18 pc 0 0 0 0 78 78 0 0 0 0 0 0 28 22 0 0 0 0
+node "GND" 875 0 -33 -9 pw 19 18 64 64 0 0 0 0 0 0 0 0 264 140 0 0 0 0
+node "VDD" 11305 0 -33 32 nw 64 64 20 18 0 0 0 0 0 0 0 0 240 128 0 0 624 128
+cap "A1" "GND" 1194
+cap "A2" "VDD" 1328
+cap "A2" "GND" 1194
+cap "VDD" "A0" 1328
+cap "A0" "GND" 1194
+cap "OUT" "A1" 720
+cap "a_n26_6#" "GND" 9588
+cap "OUT" "A2" 720
+cap "VDD" "Clk" 956
+cap "GND" "Clk" 1432
+cap "OUT" "A0" 720
+cap "VDD" "A1" 1328
+device mosfet nfet 10 6 11 7 2 3 "GND" "A0" 4 0 "OUT" 3 0 "a_n26_6#" 3 0
+device mosfet nfet 0 6 1 7 2 3 "GND" "A1" 4 0 "a_n26_6#" 3 0 "OUT" 3 0
+device mosfet nfet -10 6 -9 7 2 3 "GND" "A2" 4 0 "OUT" 3 0 "a_n26_6#" 3 0
+device mosfet nfet -28 6 -27 7 2 3 "GND" "Clk" 4 0 "GND" 3 0 "a_n26_6#" 3 0
+device mosfet pfet -28 32 -27 33 2 4 "VDD" "Clk" 4 0 "VDD" 4 0 "OUT" 4 0
+subcap "OUT" -752
+subcap "Clk" -564

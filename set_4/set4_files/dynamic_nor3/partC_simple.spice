@@ -1,0 +1,386 @@
+* SPICE3 file created from partC_simple.ext - technology: scmos
+
+.INC models_0.25.sp
+.option scale=0.0625u
+.param t=1000n
+
+
+M1000 SRAM_6t_0/a_1_15# WL7 notBL GND nfet w=3 l=2
++  ad=53 pd=40 as=195 ps=173
+M1001 GND SRAM_6t_0/a_n1_34# SRAM_6t_0/a_1_15# GND nfet w=4 l=2
++  ad=676 pd=504 as=0 ps=0
+M1002 VDD SRAM_6t_0/a_1_15# SRAM_6t_0/a_n1_34# SRAM_6t_0/w_20_27# pfet w=4 l=2
++  ad=421 pd=359 as=20 ps=18
+M1003 SRAM_6t_0/a_n1_34# SRAM_6t_0/a_1_15# GND GND nfet w=4 l=2
++  ad=53 pd=40 as=0 ps=0
+M1004 VDD SRAM_6t_0/a_n1_34# SRAM_6t_0/a_1_15# SRAM_6t_0/w_n2_27# pfet w=4 l=2
++  ad=0 pd=0 as=20 ps=18
+M1005 SRAM_6t_0/a_n1_34# WL7 BL GND nfet w=3 l=2
++  ad=0 pd=0 as=176 ps=155
+M1006 notBL BL VDD VDD pfet w=6 l=2
++  ad=30 pd=22 as=0 ps=0
+M1007 notBL BL GND GND nfet w=3 l=2
++  ad=0 pd=0 as=0 ps=0
+M1008 SRAM_6t_1/a_1_15# WL6 notBL GND nfet w=3 l=2
++  ad=53 pd=40 as=0 ps=0
+M1009 GND SRAM_6t_1/a_n1_34# SRAM_6t_1/a_1_15# GND nfet w=4 l=2
++  ad=0 pd=0 as=0 ps=0
+M1010 VDD SRAM_6t_1/a_1_15# SRAM_6t_1/a_n1_34# SRAM_6t_1/w_20_27# pfet w=4 l=2
++  ad=0 pd=0 as=20 ps=18
+M1011 SRAM_6t_1/a_n1_34# SRAM_6t_1/a_1_15# GND GND nfet w=4 l=2
++  ad=53 pd=40 as=0 ps=0
+M1012 VDD SRAM_6t_1/a_n1_34# SRAM_6t_1/a_1_15# SRAM_6t_1/w_n2_27# pfet w=4 l=2
++  ad=0 pd=0 as=20 ps=18
+M1013 SRAM_6t_1/a_n1_34# WL6 BL GND nfet w=3 l=2
++  ad=0 pd=0 as=0 ps=0
+M1014 notA0 A0 VDD VDD pfet w=6 l=2
++  ad=30 pd=22 as=0 ps=0
+M1015 notA0 A0 GND GND nfet w=3 l=2
++  ad=19 pd=18 as=0 ps=0
+M1016 notA1 A1 VDD VDD pfet w=6 l=2
++  ad=30 pd=22 as=0 ps=0
+M1017 notA1 A1 GND GND nfet w=3 l=2
++  ad=19 pd=18 as=0 ps=0
+M1018 notA2 A2 VDD VDD pfet w=6 l=2
++  ad=30 pd=22 as=0 ps=0
+M1019 notA2 A2 GND GND nfet w=3 l=2
++  ad=19 pd=18 as=0 ps=0
+M1020 dynamic_nor3_simple_0/a_n26_6# Clk GND GND nfet w=3 l=2
++  ad=80 pd=68 as=0 ps=0
+M1021 WL7 Clk VDD VDD pfet w=4 l=2
++  ad=20 pd=18 as=0 ps=0
+M1022 dynamic_nor3_simple_0/a_n26_6# notA2 WL7 GND nfet w=3 l=2
++  ad=0 pd=0 as=53 ps=46
+M1023 dynamic_nor3_simple_0/a_n26_6# notA0 WL7 GND nfet w=3 l=2
++  ad=0 pd=0 as=0 ps=0
+M1024 WL7 notA1 dynamic_nor3_simple_0/a_n26_6# GND nfet w=3 l=2
++  ad=0 pd=0 as=0 ps=0
+M1025 dynamic_nor3_simple_1/a_n26_6# Clk GND GND nfet w=3 l=2
++  ad=80 pd=68 as=0 ps=0
+M1026 WL6 Clk VDD VDD pfet w=4 l=2
++  ad=20 pd=18 as=0 ps=0
+M1027 dynamic_nor3_simple_1/a_n26_6# notA2 WL6 GND nfet w=3 l=2
++  ad=0 pd=0 as=53 ps=46
+M1028 dynamic_nor3_simple_1/a_n26_6# A0 WL6 GND nfet w=3 l=2
++  ad=0 pd=0 as=0 ps=0
+M1029 WL6 notA1 dynamic_nor3_simple_1/a_n26_6# GND nfet w=3 l=2
++  ad=0 pd=0 as=0 ps=0
+M1030 a_109_n45# A0 WL2 GND nfet w=3 l=2
++  ad=80 pd=68 as=53 ps=46
+M1031 VDD Q5 notQ5 w_61_n83# pfet w=4 l=2
++  ad=0 pd=0 as=20 ps=18
+M1032 WL4 Clk VDD VDD pfet w=4 l=2
++  ad=20 pd=18 as=0 ps=0
+M1033 GND Q0 notQ0 GND nfet w=4 l=2
++  ad=0 pd=0 as=53 ps=40
+M1034 Q3 notQ3 GND GND nfet w=4 l=2
++  ad=53 pd=40 as=0 ps=0
+M1035 VDD notQ2 Q2 w_185_n24# pfet w=4 l=2
++  ad=0 pd=0 as=20 ps=18
+M1036 a_109_n164# A2 WL0 GND nfet w=3 l=2
++  ad=80 pd=68 as=53 ps=46
+M1037 WL2 Clk VDD VDD pfet w=4 l=2
++  ad=20 pd=18 as=0 ps=0
+M1038 a_109_15# notA0 WL3 GND nfet w=3 l=2
++  ad=80 pd=68 as=53 ps=46
+M1039 a_7_n164# notA2 WL4 GND nfet w=3 l=2
++  ad=80 pd=68 as=53 ps=46
+M1040 notQ1 WL1 notBL GND nfet w=3 l=2
++  ad=53 pd=40 as=0 ps=0
+M1041 VDD Q3 notQ3 w_163_36# pfet w=4 l=2
++  ad=0 pd=0 as=20 ps=18
+M1042 notQ3 WL3 notBL GND nfet w=3 l=2
++  ad=53 pd=40 as=0 ps=0
+M1043 VDD Q2 notQ2 w_163_n24# pfet w=4 l=2
++  ad=0 pd=0 as=20 ps=18
+M1044 GND Q2 notQ2 GND nfet w=4 l=2
++  ad=0 pd=0 as=53 ps=40
+M1045 notQ5 WL5 notBL GND nfet w=3 l=2
++  ad=53 pd=40 as=0 ps=0
+M1046 notQ0 WL0 notBL GND nfet w=3 l=2
++  ad=0 pd=0 as=0 ps=0
+M1047 Q1 notQ1 GND GND nfet w=4 l=2
++  ad=53 pd=40 as=0 ps=0
+M1048 WL5 Clk VDD VDD pfet w=4 l=2
++  ad=20 pd=18 as=0 ps=0
+M1049 WL2 notA1 a_109_n45# GND nfet w=3 l=2
++  ad=0 pd=0 as=0 ps=0
+M1050 WL0 Clk VDD VDD pfet w=4 l=2
++  ad=20 pd=18 as=0 ps=0
+M1051 Q1 WL1 BL GND nfet w=3 l=2
++  ad=0 pd=0 as=0 ps=0
+M1052 notQ4 WL4 notBL GND nfet w=3 l=2
++  ad=53 pd=40 as=0 ps=0
+M1053 WL3 notA1 a_109_15# GND nfet w=3 l=2
++  ad=0 pd=0 as=0 ps=0
+M1054 GND Q4 notQ4 GND nfet w=4 l=2
++  ad=0 pd=0 as=0 ps=0
+M1055 Q5 WL5 BL GND nfet w=3 l=2
++  ad=53 pd=40 as=0 ps=0
+M1056 a_109_n104# notA0 WL1 GND nfet w=3 l=2
++  ad=80 pd=68 as=53 ps=46
+M1057 WL3 Clk VDD VDD pfet w=4 l=2
++  ad=20 pd=18 as=0 ps=0
+M1058 a_109_15# Clk GND GND nfet w=3 l=2
++  ad=0 pd=0 as=0 ps=0
+M1059 a_7_n104# notA0 WL5 GND nfet w=3 l=2
++  ad=80 pd=68 as=53 ps=46
+M1060 Q0 WL0 BL GND nfet w=3 l=2
++  ad=53 pd=40 as=0 ps=0
+M1061 a_7_n104# Clk GND GND nfet w=3 l=2
++  ad=0 pd=0 as=0 ps=0
+M1062 VDD notQ1 Q1 w_185_n83# pfet w=4 l=2
++  ad=0 pd=0 as=20 ps=18
+M1063 WL1 Clk VDD VDD pfet w=4 l=2
++  ad=20 pd=18 as=0 ps=0
+M1064 Q4 WL4 BL GND nfet w=3 l=2
++  ad=53 pd=40 as=0 ps=0
+M1065 a_109_n164# A0 WL0 GND nfet w=3 l=2
++  ad=0 pd=0 as=0 ps=0
+M1066 a_109_15# A2 WL3 GND nfet w=3 l=2
++  ad=0 pd=0 as=0 ps=0
+M1067 GND Q3 notQ3 GND nfet w=4 l=2
++  ad=0 pd=0 as=0 ps=0
+M1068 Q0 notQ0 GND GND nfet w=4 l=2
++  ad=0 pd=0 as=0 ps=0
+M1069 a_109_n45# A2 WL2 GND nfet w=3 l=2
++  ad=0 pd=0 as=0 ps=0
+M1070 VDD Q1 notQ1 w_163_n83# pfet w=4 l=2
++  ad=0 pd=0 as=20 ps=18
+M1071 a_7_n164# A0 WL4 GND nfet w=3 l=2
++  ad=0 pd=0 as=0 ps=0
+M1072 GND Q1 notQ1 GND nfet w=4 l=2
++  ad=0 pd=0 as=0 ps=0
+M1073 a_7_n164# Clk GND GND nfet w=3 l=2
++  ad=0 pd=0 as=0 ps=0
+M1074 WL1 A1 a_109_n104# GND nfet w=3 l=2
++  ad=0 pd=0 as=0 ps=0
+M1075 Q4 notQ4 GND GND nfet w=4 l=2
++  ad=0 pd=0 as=0 ps=0
+M1076 notQ2 WL2 notBL GND nfet w=3 l=2
++  ad=0 pd=0 as=0 ps=0
+M1077 VDD notQ0 Q0 w_185_n143# pfet w=4 l=2
++  ad=0 pd=0 as=20 ps=18
+M1078 a_109_n45# Clk GND GND nfet w=3 l=2
++  ad=0 pd=0 as=0 ps=0
+M1079 WL5 A1 a_7_n104# GND nfet w=3 l=2
++  ad=0 pd=0 as=0 ps=0
+M1080 Q5 notQ5 GND GND nfet w=4 l=2
++  ad=0 pd=0 as=0 ps=0
+M1081 VDD notQ4 Q4 w_83_n143# pfet w=4 l=2
++  ad=0 pd=0 as=20 ps=18
+M1082 GND Q5 notQ5 GND nfet w=4 l=2
++  ad=0 pd=0 as=0 ps=0
+M1083 a_109_n104# Clk GND GND nfet w=3 l=2
++  ad=0 pd=0 as=0 ps=0
+M1084 VDD Q0 notQ0 w_163_n143# pfet w=4 l=2
++  ad=0 pd=0 as=20 ps=18
+M1085 Q3 WL3 BL GND nfet w=3 l=2
++  ad=0 pd=0 as=0 ps=0
+M1086 WL0 A1 a_109_n164# GND nfet w=3 l=2
++  ad=0 pd=0 as=0 ps=0
+M1087 Q2 notQ2 GND GND nfet w=4 l=2
++  ad=53 pd=40 as=0 ps=0
+M1088 Q2 WL2 BL GND nfet w=3 l=2
++  ad=0 pd=0 as=0 ps=0
+M1089 VDD Q4 notQ4 w_61_n143# pfet w=4 l=2
++  ad=0 pd=0 as=20 ps=18
+M1090 WL4 A1 a_7_n164# GND nfet w=3 l=2
++  ad=0 pd=0 as=0 ps=0
+M1091 a_109_n104# A2 WL1 GND nfet w=3 l=2
++  ad=0 pd=0 as=0 ps=0
+M1092 VDD notQ5 Q5 w_83_n83# pfet w=4 l=2
++  ad=0 pd=0 as=20 ps=18
+M1093 a_109_n164# Clk GND GND nfet w=3 l=2
++  ad=0 pd=0 as=0 ps=0
+M1094 VDD notQ3 Q3 w_185_36# pfet w=4 l=2
++  ad=0 pd=0 as=20 ps=18
+M1095 a_7_n104# notA2 WL5 GND nfet w=3 l=2
++  ad=0 pd=0 as=0 ps=0
+C0 VDD A2 13.23fF
+C1 notA0 GND 15.52fF
+C2 SRAM_6t_1/a_n1_34# GND 7.00fF
+C3 Q0 GND 7.00fF
+C4 notQ2 GND 4.36fF
+C5 w_163_n24# Q2 2.62fF
+C6 SRAM_6t_0/a_1_15# GND 4.36fF
+C7 a_109_n164# GND 6.49fF
+C8 Q5 GND 7.00fF
+C9 A1 VDD 28.41fF
+C10 Q1 GND 7.00fF
+C11 BL GND 20.45fF
+C12 Q3 GND 7.00fF
+C13 notA1 WL7 5.62fF
+C14 notBL VDD 7.56fF
+C15 w_163_n143# Q0 2.62fF
+C16 a_7_n104# GND 8.18fF
+C17 a_109_n104# GND 8.37fF
+C18 Q2 GND 7.00fF
+C19 notA1 GND 28.86fF
+C20 notA1 WL4 2.32fF
+C21 w_185_n143# notQ0 2.62fF
+C22 GND WL6 7.08fF
+C23 a_7_n164# GND 6.72fF
+C24 Clk GND 29.07fF
+C25 A0 GND 29.82fF
+C26 notA1 WL5 2.32fF
+C27 w_163_36# Q3 2.62fF
+C28 WL0 GND 7.08fF
+C29 A2 GND 16.82fF
+C30 a_109_15# GND 9.21fF
+C31 w_185_n24# notQ2 2.62fF
+C32 w_83_n143# notQ4 2.62fF
+C33 w_185_36# notQ3 2.62fF
+C34 SRAM_6t_0/w_20_27# SRAM_6t_0/a_1_15# 2.62fF
+C35 SRAM_6t_1/w_n2_27# SRAM_6t_1/a_n1_34# 2.62fF
+C36 WL1 GND 7.08fF
+C37 WL2 GND 7.08fF
+C38 VDD notA2 3.98fF
+C39 WL3 GND 7.08fF
+C40 SRAM_6t_1/a_1_15# GND 4.36fF
+C41 notA0 VDD 12.43fF
+C42 SRAM_6t_1/w_20_27# SRAM_6t_1/a_1_15# 2.62fF
+C43 SRAM_6t_0/a_n1_34# GND 7.00fF
+C44 A1 GND 33.51fF
+C45 notQ0 GND 4.36fF
+C46 a_109_n45# GND 8.84fF
+C47 notBL GND 19.86fF
+C48 w_185_n83# notQ1 2.62fF
+C49 WL7 GND 7.08fF
+C50 w_163_n83# Q1 2.62fF
+C51 notQ5 GND 4.36fF
+C52 notQ1 GND 4.36fF
+C53 SRAM_6t_0/w_n2_27# SRAM_6t_0/a_n1_34# 2.62fF
+C54 notQ3 GND 4.36fF
+C55 BL VDD 9.24fF
+C56 WL4 GND 7.08fF
+C57 Q4 GND 7.00fF
+C58 w_83_n83# notQ5 2.62fF
+C59 notA1 WL6 3.15fF
+C60 dynamic_nor3_simple_1/a_n26_6# GND 9.21fF
+C61 w_61_n83# Q5 2.62fF
+C62 VDD notA1 17.17fF
+C63 w_61_n143# Q4 2.62fF
+C64 notBL notA0 4.32fF
+C65 dynamic_nor3_simple_0/a_n26_6# GND 9.59fF
+C66 notQ4 GND 4.36fF
+C67 WL5 GND 7.08fF
+C68 VDD Clk 19.71fF
+C69 VDD A0 19.76fF
+C70 A1 a_109_n164# 2.59fF
+C71 notA2 GND 9.48fF
+C72 WL6 0 22.09fF
+C73 WL7 0 22.09fF
+C74 notQ0 0 4.77fF
+C75 Q0 0 2.32fF
+C76 WL0 0 18.50fF
+C77 notQ4 0 3.46fF
+C78 Q4 0 2.32fF
+C79 notQ1 0 4.77fF
+C80 Q1 0 2.32fF
+C81 WL1 0 8.65fF
+C82 WL4 0 13.43fF
+C83 notQ5 0 4.77fF
+C84 Q5 0 2.32fF
+C85 notQ2 0 3.30fF
+C86 WL5 0 14.47fF
+C87 Q2 0 2.32fF
+C88 notQ3 0 4.77fF
+C89 Q3 0 2.32fF
+C90 WL3 0 13.02fF
+C91 notA1 0 16.52fF
+C92 notA2 0 15.25fF
+C93 VDD 0 3.01fF
+C94 notA0 0 13.30fF
+C95 notBL 0 52.33fF
+C96 SRAM_6t_1/a_1_15# 0 4.77fF
+C97 SRAM_6t_1/a_n1_34# 0 2.32fF
+C98 SRAM_6t_0/a_1_15# 0 4.77fF
+C99 SRAM_6t_0/a_n1_34# 0 2.32fF
+
+*---- Actual test ----
+Vdd VDD 0 DC 2.5
+*VA0 A0 0 PULSE (0 2.5 {t} 1p 1p {t} {2*t})
+*VA1 A1 0 PULSE (0 2.5 {2*t} 1p 1p {2*t} {4*t})
+*VA2 A2 0 PULSE (0 2.5 {4*t} 1p 1p {4*t} {8*t})
+VClk Clk 0 PULSE (0 2.5 {8*t} 1p 1p {8*t} {16*t})
+
+
+*--- SRAM 0
+*VA2 A2 0 DC 0
+*VA1 A1 0 DC 0
+*VA0 A0 0 DC 0
+
+*--- SRAM 1
+*VA2 A2 0 DC 0
+*VA1 A1 0 DC 0
+*VA0 A0 0 DC 2.5
+
+*--- SRAM 2
+*VA2 A2 0 DC 0
+*VA1 A1 0 DC 2.5
+*VA0 A0 0 DC 0
+
+*--- SRAM 3
+*VA2 A2 0 DC 0
+*VA1 A1 0 DC 2.5
+*VA0 A0 0 DC 2.5
+
+*--- SRAM 4
+*VA2 A2 0 DC 2.5
+*VA1 A1 0 DC 0
+*VA0 A0 0 DC 0
+
+*--- SRAM 5
+*VA2 A2 0 DC 2.5
+*VA1 A1 0 DC 0
+*VA0 A0 0 DC 2.5
+
+*--- SRAM 6
+*VA2 A2 0 DC 2.5
+*VA1 A1 0 DC 2.5
+*VA0 A0 0 DC 0
+
+*--- SRAM 7
+VA2 A2 0 DC 2.5
+VA1 A1 0 DC 2.5
+VA0 A0 0 DC 2.5
+
+VBL BL 0 PWL(
++    0n 0
++    4.9n 0  5n 2.5
++    14.9n 2.2   15n 2.5
++    24.9n 2.2   25n 0
++    34.9n 0     35n 2.5
++    38n 0       45n 0
++)
+
+* --- notBL timing ---
+* WRITE 1: notBL = 0V (0–10ns)
+* READ 1: float (10–20ns)
+* WRITE 0: notBL = 2.5V (20–30ns)
+* READ 0: float (30–40ns)
+
+VnBL notBL 0 PWL(
++    0n 0
++    14.9n 0  15n 2.5
++    18n 0    24.9n 0
++    25n 2.5  34.9n 2.2
++    35n 2.5  45n 2.2
++)
+.tran 0.001 {16*t}
+.control
+    run
+    plot v(WL0) v(WL1)+4 v(WL2)+8 v(WL3)+12 v(WL4)+16 v(WL5)+20 v(WL6)+24 v(WL7)+28
+    *plot v(notA0) v(notA1)+4 v(notA2)+8 v(Clk)+12 v(A0)+16 v(A1)+20 v(A2)+24 v(WL0)+28
+    *plot v(notA0) v(notA1)+4 v(notA2)+8 v(Clk)+12 v(A0)+16 v(A1)+20 v(A2)+24 v(WL1)+28
+    *plot v(notA0) v(notA1)+4 v(notA2)+8 v(Clk)+12 v(A0)+16 v(A1)+20 v(A2)+24 v(WL2)+28
+    *plot v(notA0) v(notA1)+4 v(notA2)+8 v(Clk)+12 v(A0)+16 v(A1)+20 v(A2)+24 v(WL3)+28
+    *plot v(notA0) v(notA1)+4 v(notA2)+8 v(Clk)+12 v(A0)+16 v(A1)+20 v(A2)+24 v(WL4)+28
+    *plot v(notA0) v(notA1)+4 v(notA2)+8 v(Clk)+12 v(A0)+16 v(A1)+20 v(A2)+24 v(WL5)+28
+    *plot v(notA0) v(notA1)+4 v(notA2)+8 v(Clk)+12 v(A0)+16 v(A1)+20 v(A2)+24 v(WL6)+28
+    *plot v(notA0) v(notA1)+4 v(notA2)+8 v(Clk)+12 v(A0)+16 v(A1)+20 v(A2)+24 v(WL7)+28
+        
+.endc
+
+

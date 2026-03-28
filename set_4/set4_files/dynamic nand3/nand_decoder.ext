@@ -1,0 +1,42 @@
+timestamp 1765638383
+version 8.3
+tech scmos
+style lambda=1.0(scna20_orb)
+scale 1000 1 100
+resistclasses 26670 59550 23860 19690 27260 2000000 49 26 2505830
+node "a_n55_n21#" 44 564 -55 -21 ndc 19 18 0 0 0 0 0 0 0 0 0 0 28 22 0 0 0 0
+node "a_n48_n21#" 116 1880 -48 -21 ndiff 19 18 30 22 0 0 0 0 0 0 0 0 80 48 0 0 0 0
+node "a_n55_n7#" 72 564 -55 -7 pdc 0 0 30 22 0 0 0 0 0 0 0 0 36 26 0 0 0 0
+node "a_14_0#" 74 0 14 0 ndiff 28 24 0 0 0 0 0 0 0 0 0 0 16 16 0 0 0 0
+node "a_4_0#" 74 0 4 0 ndiff 28 24 0 0 0 0 0 0 0 0 0 0 16 16 0 0 0 0
+node "a_n12_0#" 170 0 -12 0 ndiff 38 36 0 0 0 0 0 0 0 0 0 0 48 32 0 0 0 0
+node "a_n54_n14#" 286 5982 -54 -14 pc 0 0 0 0 64 60 0 0 0 0 0 0 20 18 0 0 0 0
+node "A0" 151 3022 21 7 pc 0 0 0 0 34 34 0 0 0 0 0 0 44 30 16 16 0 0
+node "A1" 151 3022 11 7 pc 0 0 0 0 34 34 0 0 0 0 0 0 44 30 16 16 0 0
+node "A2" 151 3022 1 7 pc 0 0 0 0 34 34 0 0 0 0 0 0 44 30 16 16 0 0
+node "WL" 140 3408 42 0 ndiff 19 18 30 22 16 16 0 0 0 0 0 0 88 52 0 0 0 0
+node "Clk" 260 3012 -16 7 pc 0 0 0 0 52 52 0 0 0 0 0 0 16 16 0 0 0 0
+node "OUT" 406 6276 -12 14 pdiff 19 18 20 18 64 60 0 0 0 0 0 0 328 172 0 0 0 0
+node "gnd" 1000 0 -19 -8 pw 38 36 64 64 0 0 0 0 0 0 0 0 296 156 0 0 0 0
+node "VDD" 11691 2068 -19 14 nw 64 64 50 40 0 0 0 0 0 0 0 0 344 180 0 0 1068 168
+cap "A1" "VDD" 752
+cap "A2" "gnd" 1194
+cap "A0" "VDD" 752
+cap "OUT" "VDD" 10920
+cap "a_n12_0#" "gnd" 752
+cap "gnd" "Clk" 1194
+cap "A2" "VDD" 752
+cap "A1" "gnd" 1194
+cap "A0" "gnd" 1194
+cap "VDD" "Clk" 956
+cap "gnd" "OUT" 1758
+device mosfet nfet -50 -21 -49 -20 2 3 "Gnd!" "a_n54_n14#" 4 0 "a_n55_n21#" 3 0 "a_n48_n21#" 3 0
+device mosfet pfet -50 -7 -49 -6 2 6 "Vdd!" "a_n54_n14#" 4 0 "a_n55_n7#" 6 0 "a_n48_n21#" 6 0
+device mosfet nfet 40 0 41 1 2 3 "gnd" "OUT" 4 0 "gnd" 3 0 "WL" 3 0
+device mosfet nfet 22 0 23 1 2 3 "gnd" "A0" 4 0 "a_14_0#" 3 0 "OUT" 3 0
+device mosfet nfet 12 0 13 1 2 3 "gnd" "A1" 4 0 "a_4_0#" 3 0 "a_14_0#" 3 0
+device mosfet nfet 2 0 3 1 2 3 "gnd" "A2" 4 0 "a_n12_0#" 3 0 "a_4_0#" 3 0
+device mosfet nfet -14 0 -13 1 2 3 "gnd" "Clk" 4 0 "gnd" 3 0 "a_n12_0#" 3 0
+device mosfet pfet 40 14 41 15 2 6 "VDD" "OUT" 4 0 "VDD" 6 0 "WL" 6 0
+device mosfet pfet -14 14 -13 15 2 4 "VDD" "Clk" 4 0 "VDD" 4 0 "OUT" 4 0
+subcap "WL" -2148

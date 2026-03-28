@@ -1,0 +1,28 @@
+* SPICE3 file created from dynamic_nor3_simple.ext - technology: scmos
+.INC models_0.25.sp
+.option scale=0.0625u
+.param t=1000n
+
+M1000 a_n26_6# Clk GND GND CMOSN w=3 l=2
++  ad=80 pd=68 as=19 ps=18
+M1001 OUT Clk VDD VDD CMOSP w=4 l=2
++  ad=20 pd=18 as=20 ps=18
+M1002 a_n26_6# A2 OUT GND CMOSN w=3 l=2
++  ad=0 pd=0 as=53 ps=46
+M1003 a_n26_6# A0 OUT GND CMOSN w=3 l=2
++  ad=0 pd=0 as=0 ps=0
+M1004 OUT A1 a_n26_6# GND CMOSN w=3 l=2
++  ad=0 pd=0 as=0 ps=0
+C0 a_n26_6# GND 9.59fF
+C1 OUT 0 13.02fF
+
+Vdd VDD 0 DC 2.5
+VA0 A0 0 PULSE (0 2.5 {t} 1p 1p {t} {2*t})
+VA1 A1 0 PULSE (0 2.5 {2*t} 1p 1p {2*t} {4*t})
+VA2 A2 0 PULSE (0 2.5 {4*t} 1p 1p {4*t} {8*t})
+VClk Clk 0 PULSE (0 2.5 {8*t} 1p 1p {8*t} {16*t})
+.tran 0.001 {16*t}
+.control
+    run
+    plot v(A0) v(A1)+4 v(A2)+8 v(Clk)+12 v(OUT)+16 
+.endc

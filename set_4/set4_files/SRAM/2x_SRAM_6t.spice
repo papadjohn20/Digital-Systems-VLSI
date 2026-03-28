@@ -1,0 +1,141 @@
+* SPICE3 file created from SRAM_6t.ext - technology: scmos
+.INC models_0.25.sp
+.option scale=0.0625u
+.param t=1000n
+
+*-------- FIRST SRAM cell --------
+*--- WL1 = M5 = M6 ---
+*M6
+M1001 Q1 WL1 BL GND CMOSN w=3 l=2
++  ad=53 pd=40 as=25 ps=22
+*M5
+M1002 notQ1 WL1 notBL GND CMOSN w=3 l=2
++  ad=53 pd=40 as=25 ps=22
+
+*--- notQ1 = M3 = M4 --- 
+*M4
+M1004 VDD notQ1 Q1 w_20_25# CMOSP w=4 l=2
++  ad=0 pd=0 as=20 ps=18
+*M3
+M1005 Q1 notQ1 GND GND CMOSN w=4 l=2
++  ad=0 pd=0 as=0 ps=0
+
+*--- Q1 = M1 = M2 ---
+*M2
+M1000 VDD Q1 notQ1 w_n2_25# CMOSP w=4 l=2
++  ad=40 pd=36 as=20 ps=18
+*M1
+M1003 GND Q1 notQ1 GND CMOSN w=4 l=2
++  ad=56 pd=36 as=0 ps=0
+
+C0 w_n2_25# Q1 2.62fF
+C1 notQ1 GND 4.36fF
+C2 GND WL 6.67fF
+C3 w_20_25# M4 2.62fF
+C4 GND BL 2.41fF
+C5 notBL GND 2.48fF
+C6 GND Q1 7.00fF
+C7 notQ1 0 4.77fF
+C8 Q1 0 2.32fF
+
+*-------- SECOND SRAM cell --------
+*(BL/notBL shared)
+*--- WL2 = M5 = M6 ---
+M2001 Q2 WL2 BL GND CMOSN w=3 l=2
++  ad=53 pd=40 as=25 ps=22
+M2002 notQ2 WL2 notBL GND CMOSN w=3 l=2
++  ad=53 pd=40 as=25 ps=22
+
+*--- notQ2 = M3 = M4 --- 
+M2004 VDD notQ2 Q2 w_20_26# CMOSP w=4 l=2
++  ad=0 pd=0 as=20 ps=18
+M2005 Q2 notQ2 GND GND CMOSN w=4 l=2
++  ad=0 pd=0 as=0 ps=0
+
+*--- Q2 = M1 = M2 ---
+M2000 VDD Q2 notQ2 w_n2_26# CMOSP w=4 l=2
++  ad=40 pd=36 as=20 ps=18
+M2003 GND Q2 notQ2 GND CMOSN w=4 l=2
++  ad=56 pd=36 as=0 ps=0
+
+C9  w_n2_26# Q2   2.62fF
+C10 notQ2 GND    4.36fF
+C11 w_20_26# M4   2.62fF
+C12 GND Q2        7.00fF
+C13 Q2 0          2.32fF
+C14 notQ2 0       4.77fF
+
+
+Vdd VDD 0 DC 2.5
+
+*=========================================*
+*   BITLINE DRIVERS (PWL)
+*=========================================*
+* --- BL timing ---
+* WRITE 1: BL = 2.5V (0–10ns)
+* READ 1: BL floats (0V via 1Meg) (10–20ns)
+* WRITE 0: BL = 0V (20–30ns)
+* READ 0: BL floats (30–40ns)
+
+VBL BL 0 PWL(
++    0n 0
++    4.9n 0  5n 2.5
++    14.9n 2.2   15n 2.5
++    24.9n 2.2   25n 0
++    34.9n 0     35n 2.5
++    38n 0       45n 0
++)
+
+* --- notBL timing ---
+* WRITE 1: notBL = 0V (0–10ns)
+* READ 1: float (10–20ns)
+* WRITE 0: notBL = 2.5V (20–30ns)
+* READ 0: float (30–40ns)
+
+VnBL notBL 0 PWL(
++    0n 0
++    14.9n 0  15n 2.5
++    18n 0    24.9n 0
++    25n 2.5  34.9n 2.2
++    35n 2.5  45n 2.2
++)
+
+
+*=========================================*
+*   WORD LINE (WL) TIMING
+*=========================================*
+* WL pulses open access transistors
+* 4 pulses: Write1, Read1, Write0, Read0
+
+VWL1 WL1 0 PWL(
++   0n 0
+    * WRITE 1 WL1 pulse
++    5n 0   6n 2.5   9n 2.5   10n 0
+    * READ 1 WL1 pulse
++    15n 0  16n 2.5  19n 2.5  20n 0
+    * WRITE 0 WL1 pulse
++    25n 0  26n 2.5  29n 2.5  30n 0
+    * READ 0 WL1 pulse
++    35n 0  36n 2.5  39n 2.5  40n 0
++)
+
+*.ic Q2=0 notQ2=2.5 Write 0 and read it when the 1st Sram reads 1 
+VWL2 WL2 0 PWL(
++   0n 0
+    * READ 0 WL2 at 32–36ns
++    15n 0  16n 2.5  19n 2.5  20n 0
++)
+*=========================================*
+*   TRANSIENT ANALYSIS
+*=========================================*
+
+.tran 0.1n 45n
+.control
+    run
+    plot V(BL) V(notBL)
+    plot V(WL1) V(WL2)
+    plot V(Q1) V(notQ1) 
+    plot V(Q2) V(notQ2)
+.endc
+
+.end

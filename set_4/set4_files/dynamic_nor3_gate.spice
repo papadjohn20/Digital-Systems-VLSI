@@ -1,0 +1,54 @@
+* SPICE3 file created from dynamic_nor3_gate.ext - technology: scmos
+.INC models_0.25.sp
+.option scale=1u
+.param t=1000n
+
+*---- Clk pmos ----
+M1003 VDD Clk OUT Vdd CMOSP w=4 l=2
++  ad=20 pd=18 as=20 ps=18
+*---- A2 ----
+M1000 a_n4_n2# A2 OUT Gnd CMOSN w=3 l=2
++  ad=69 pd=62 as=50 ps=44
+*---- A1 ----
+M1002 OUT A1 a_n4_n2# Gnd CMOSN w=3 l=2
++  ad=0 pd=0 as=0 ps=0
+*---- A0 ----
+M1004 a_n4_n2# A0 OUT Gnd CMOSN w=3 l=2
++  ad=0 pd=0 as=0 ps=0
+*---- Clk nmos ----
+M1001 GND Clk a_n4_n2# Gnd CMOSN w=3 l=2
++  ad=19 pd=18 as=0 ps=0
+
+C0 A0 Gnd 3.73fF
+C1 A1 Gnd 3.73fF
+C2 A2 Gnd 3.41fF
+C3 a_n4_n2# Gnd 6.58fF
+C4 OUT Gnd 15.23fF
+C5 Clk Gnd 10.71fF
+C6 GND Gnd 5.45fF
+C7 VDD Gnd 4.14fF
+
+*---- Actual test ----
+Vdd VDD 0 DC 2.5
+VA0 A0 0 PULSE (0 2.5 {t} 1p 1p {t} {2*t})
+VA1 A1 0 PULSE (0 2.5 {2*t} 1p 1p {2*t} {4*t})
+VA2 A2 0 PULSE (0 2.5 {4*t} 1p 1p {4*t} {8*t})
+VClk Clk 0 PULSE (0 2.5 {8*t} 1p 1p {8*t} {16*t})
+
+.tran 0.001 {32*t}
+.control
+    run
+    plot v(OUT) v(Clk)+4 v(A0)+8 v(A1)+12 v(A2)+15 
+.endc
+*----------------------
+
+*---- To test only the precharge ----
+*Vdd VDD 0 DC 2.5
+*VClk Clk 0 PULSE (0 2.5 {8*t} 1p 1p {8*t} {16*t})
+
+*.tran 0.001 {32*t}
+*.control
+*    run
+*    plot v(OUT) v(Clk)+4
+*.endc
+.end

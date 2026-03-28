@@ -1,0 +1,471 @@
+timestamp 1765565217
+version 8.3
+tech scmos
+style lambda=1.0(scna20_orb)
+scale 1000 1 100
+resistclasses 26670 59550 23860 19690 27260 2000000 49 26 2505830
+use dynamic_nor3_simple dynamic_nor3_simple_1 1 0 33 0 1 -51
+use dynamic_nor3_simple dynamic_nor3_simple_0 1 0 33 0 1 9
+use inverter inverter_0 1 0 -16 0 1 16
+use inverter inverter_1 1 0 -16 0 1 -44
+use inverter inverter_2 1 0 -16 0 1 -103
+use inverter inverter_3 1 0 -16 0 1 -163
+use SRAM_6t SRAM_6t_0 1 0 63 0 1 9
+use SRAM_6t SRAM_6t_1 1 0 63 0 1 -51
+node "m1_52_n60#" 0 4183 52 -60 m1 0 0 0 0 0 0 0 0 0 0 0 0 100 58 0 0 0 0
+node "m1_38_n42#" 0 2820 38 -42 m1 0 0 0 0 0 0 0 0 0 0 0 0 60 46 0 0 0 0
+node "m1_0_8#" 0 752 0 8 m1 0 0 0 0 0 0 0 0 0 0 0 0 16 16 0 0 0 0
+node "m1_52_0#" 0 4183 52 0 m1 0 0 0 0 0 0 0 0 0 0 0 0 100 58 0 0 0 0
+node "m1_38_18#" 0 2820 38 18 m1 0 0 0 0 0 0 0 0 0 0 0 0 60 46 0 0 0 0
+node "a_109_n164#" 331 0 109 -164 ndiff 80 68 0 0 0 0 0 0 0 0 0 0 252 134 0 0 0 0
+node "notQ0" 611 4766 166 -155 ndc 53 40 20 18 82 78 0 0 0 0 0 0 132 74 0 0 0 0
+node "Q0" 611 2318 164 -136 p 53 40 20 18 82 78 0 0 0 0 0 0 132 74 0 0 0 0
+node "WL0" 988 18501 109 -138 pdiff 53 46 20 18 126 126 0 0 0 0 0 0 373 204 0 0 0 0
+equiv "WL0" "OUT0"
+node "notQ4" 611 4766 64 -155 ndc 53 40 20 18 82 78 0 0 0 0 0 0 132 74 0 0 0 0
+node "a_7_n164#" 331 0 7 -164 ndiff 80 68 0 0 0 0 0 0 0 0 0 0 252 134 0 0 0 0
+node "Q4" 611 2318 62 -136 p 53 40 20 18 82 78 0 0 0 0 0 0 132 74 0 0 0 0
+node "a_109_n104#" 331 0 109 -104 ndiff 80 68 0 0 0 0 0 0 0 0 0 0 252 134 0 0 0 0
+node "notQ1" 611 4766 166 -95 ndc 53 40 20 18 82 78 0 0 0 0 0 0 132 74 0 0 0 0
+node "Q1" 611 2318 164 -76 p 53 40 20 18 82 78 0 0 0 0 0 0 132 74 0 0 0 0
+node "WL1" 988 20005 109 -78 pdiff 53 46 20 18 126 126 0 0 0 0 0 0 373 204 0 0 0 0
+equiv "WL1" "OUT1"
+node "A1" 3968 68172 30 -159 pc 0 0 0 0 712 692 0 0 0 0 0 0 224 152 1472 768 0 0
+node "notA2" 310 17608 23 -166 p 0 0 0 0 60 60 0 0 0 0 0 0 104 76 910 464 0 0
+node "WL4" 988 20569 7 -138 pdiff 53 46 20 18 126 126 0 0 0 0 0 0 373 204 0 0 0 0
+equiv "WL4" "OUT4"
+node "a_7_n104#" 331 0 7 -104 ndiff 80 68 0 0 0 0 0 0 0 0 0 0 252 134 0 0 0 0
+node "notQ5" 611 4766 64 -95 ndc 53 40 20 18 82 78 0 0 0 0 0 0 132 74 0 0 0 0
+node "Q5" 611 2318 62 -76 p 53 40 20 18 82 78 0 0 0 0 0 0 132 74 0 0 0 0
+node "a_109_n45#" 331 0 109 -45 ndiff 80 68 0 0 0 0 0 0 0 0 0 0 252 134 0 0 0 0
+node "notQ2" 611 4766 166 -36 ndc 53 40 20 18 82 78 0 0 0 0 0 0 132 74 0 0 0 0
+node "A0" 6304 133545 13 -172 p 0 0 0 0 1092 1078 0 0 0 0 0 0 168 116 1876 962 0 0
+node "WL5" 988 21603 7 -78 pdiff 53 46 20 18 126 126 0 0 0 0 0 0 373 204 0 0 0 0
+equiv "WL5" "OUT5"
+node "a_3_n152#" 1480 20164 3 -152 pc 0 0 0 0 264 260 0 0 0 0 0 0 56 44 0 0 0 0
+node "WL6" 344 8606 56 -26 pc 0 0 0 0 66 66 0 0 0 0 0 0 32 24 0 0 0 0
+node "Q2" 611 2318 164 -17 p 53 40 20 18 82 78 0 0 0 0 0 0 132 74 0 0 0 0
+node "BL" 728 27057 86 -175 ndc 150 132 0 0 0 0 0 0 0 0 0 0 300 206 2369 1542 0 0
+node "notBL" 729 50714 64 -175 ndc 150 132 0 0 0 0 0 0 0 0 0 0 1148 630 1538 1020 0 0
+node "WL2" 988 20475 109 -19 pdiff 53 46 20 18 126 126 0 0 0 0 0 0 373 204 0 0 0 0
+equiv "WL2" "OUT2"
+node "notA0" 497 51809 43 -106 p 0 0 0 0 102 96 0 0 0 0 0 0 392 236 2423 1394 0 0
+node "a_109_15#" 331 0 109 15 ndiff 80 68 0 0 0 0 0 0 0 0 0 0 252 134 0 0 0 0
+node "notA1" 315 35735 132 -40 pc 0 0 0 0 68 64 0 0 0 0 0 0 112 80 2774 1476 0 0
+node "A2" 2629 52669 119 -157 p 0 0 0 0 472 460 0 0 0 0 0 0 204 142 1068 566 0 0
+node "a_5_n19#" 394 8174 5 -19 p 0 0 0 0 66 70 0 0 0 0 0 0 0 0 0 0 0 0
+node "WL7" 344 8606 56 34 pc 0 0 0 0 66 66 0 0 0 0 0 0 32 24 0 0 0 0
+node "notQ3" 611 4766 166 24 ndc 53 40 20 18 82 78 0 0 0 0 0 0 132 74 0 0 0 0
+node "Q3" 611 2318 164 43 p 53 40 20 18 82 78 0 0 0 0 0 0 132 74 0 0 0 0
+node "WL3" 988 21979 109 41 pdiff 53 46 20 18 126 126 0 0 0 0 0 0 373 204 0 0 0 0
+equiv "WL3" "OUT3"
+node "Clk" 4141 60874 5 46 p 0 0 0 0 726 714 0 0 0 0 0 0 112 88 0 0 0 0
+node "w_185_n143#" 3508 0 185 -143 nw 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 140 48
+node "w_163_n143#" 3508 0 163 -143 nw 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 140 48
+node "w_83_n143#" 3508 0 83 -143 nw 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 140 48
+node "w_61_n143#" 3508 0 61 -143 nw 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 140 48
+node "GND" 5637 66082 0 -179 pw 300 216 320 320 0 0 0 0 0 0 0 0 3188 1602 0 0 0 0
+node "w_185_n83#" 3508 0 185 -83 nw 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 140 48
+node "w_163_n83#" 3508 0 163 -83 nw 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 140 48
+node "w_83_n83#" 3508 0 83 -83 nw 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 140 48
+node "w_61_n83#" 3508 0 61 -83 nw 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 140 48
+node "w_102_n60#" 1273 8507 102 -60 pw 75 54 80 80 0 0 0 0 0 0 0 0 612 314 0 0 0 0
+node "w_185_n24#" 3508 0 185 -24 nw 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 140 48
+node "w_163_n24#" 3508 0 163 -24 nw 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 140 48
+node "w_102_0#" 1273 9071 102 0 pw 75 54 80 80 0 0 0 0 0 0 0 0 624 320 0 0 0 0
+node "w_185_36#" 3508 0 185 36 nw 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 140 48
+node "w_163_36#" 3508 0 163 36 nw 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 140 48
+node "VDD" 100998 206048 0 -138 nw 480 480 360 324 0 0 0 0 0 0 0 0 6624 3038 0 0 3744 768
+cap "A1" "notA1" 893
+cap "A0" "WL5" 240
+cap "notBL" "BL" 540
+cap "a_109_n45#" "notA1" 852
+cap "notBL" "w_163_n143#" 114
+cap "BL" "w_102_0#" 2407
+cap "A0" "a_109_n164#" 1158
+cap "GND" "a_7_n104#" 8178
+cap "w_61_n143#" "Q4" 2616
+cap "Q5" "notBL" 722
+cap "A1" "a_109_n104#" 540
+cap "notA1" "A2" 152
+cap "notBL" "Q1" 722
+cap "WL6" "notA0" 152
+cap "a_109_15#" "A2" 240
+cap "A0" "GND" 19891
+cap "WL7" "m1_52_0#" 330
+cap "w_102_n60#" "BL" 2407
+cap "notA1" "notA0" 720
+cap "WL2" "BL" 114
+cap "GND" "WL0" 7080
+cap "notBL" "notA0" 1440
+cap "w_102_0#" "A2" 4368
+cap "notA0" "m1_52_n60#" 540
+cap "notQ4" "w_61_n143#" 564
+cap "a_109_n45#" "w_102_n60#" 8836
+cap "a_109_n104#" "A2" 240
+cap "notA0" "w_102_0#" 1734
+cap "a_109_n104#" "notA0" 918
+cap "GND" "WL4" 7080
+cap "A1" "a_7_n164#" 750
+cap "notBL" "notQ0" 628
+cap "notQ5" "BL" 722
+cap "notBL" "w_163_n83#" 114
+cap "w_163_36#" "notBL" 114
+cap "WL1" "A0" 660
+cap "w_102_n60#" "A2" 4368
+cap "WL2" "A2" 960
+cap "Q2" "notQ2" 480
+cap "Q3" "notQ3" 480
+cap "w_102_n60#" "notA0" 540
+cap "WL2" "notA0" 540
+cap "BL" "Q4" 628
+cap "GND" "a_5_n19#" 240
+cap "notA0" "m1_52_0#" 2430
+cap "VDD" "a_3_n152#" 4928
+cap "w_163_n24#" "Q2" 2616
+cap "Q5" "notQ5" 480
+cap "w_163_n24#" "VDD" 987
+cap "BL" "WL5" 114
+cap "notA1" "a_109_15#" 852
+cap "VDD" "Clk" 9856
+cap "WL6" "m1_52_n60#" 330
+cap "A0" "a_7_n104#" 240
+cap "BL" "notQ2" 722
+cap "notA1" "w_102_0#" 2522
+cap "notQ4" "BL" 722
+cap "a_109_15#" "w_102_0#" 9212
+cap "notQ1" "w_185_n83#" 2616
+cap "BL" "notQ3" 722
+cap "A1" "a_109_n164#" 2592
+cap "notBL" "w_102_0#" 2483
+cap "BL" "GND" 9628
+cap "w_185_n24#" "Q2" 376
+cap "notA0" "Q4" 38
+cap "Clk" "BL" 114
+cap "VDD" "w_185_n24#" 1128
+cap "A1" "GND" 32314
+cap "w_102_n60#" "notA1" 2522
+cap "A0" "WL0" 240
+cap "w_185_n143#" "Q0" 376
+cap "WL5" "notA0" 540
+cap "VDD" "w_61_n83#" 987
+cap "BL" "notQ1" 722
+cap "notA1" "WL2" 720
+cap "notBL" "w_102_n60#" 2483
+cap "a_109_n164#" "A2" 852
+cap "Q5" "GND" 7000
+cap "notBL" "WL2" 114
+cap "Q1" "GND" 7000
+cap "notA0" "a_109_n164#" 1665
+cap "notA1" "a_7_n164#" 540
+cap "A0" "WL4" 660
+cap "VDD" "w_83_n143#" 987
+cap "WL5" "notA2" 720
+cap "w_185_n24#" "BL" 190
+cap "GND" "A2" 6890
+cap "WL1" "BL" 114
+cap "w_185_36#" "notQ3" 2616
+cap "notQ1" "Q1" 480
+cap "notA0" "GND" 7624
+cap "Clk" "notA0" 38
+cap "notQ5" "notBL" 628
+cap "a_3_n152#" "notA2" 152
+cap "BL" "Q0" 628
+cap "w_102_n60#" "WL2" 7080
+cap "w_83_n143#" "BL" 190
+cap "w_163_n143#" "Q0" 2616
+cap "notA2" "GND" 4436
+cap "GND" "notQ0" 4364
+cap "w_163_36#" "notQ3" 564
+cap "Q5" "w_61_n83#" 2616
+cap "VDD" "A0" 18802
+cap "notBL" "Q4" 722
+cap "BL" "WL3" 114
+cap "notA1" "WL5" 2316
+cap "WL1" "A2" 600
+cap "w_163_n83#" "notQ1" 564
+cap "WL1" "notA0" 540
+cap "notBL" "WL5" 114
+cap "A1" "a_7_n104#" 660
+cap "VDD" "w_83_n83#" 987
+cap "notA1" "m1_38_n42#" 1350
+cap "VDD" "w_61_n143#" 987
+cap "notBL" "notQ2" 628
+cap "notA1" "GND" 17817
+cap "notQ4" "notBL" 628
+cap "notA1" "Clk" 114
+cap "notBL" "notQ3" 628
+cap "a_109_n45#" "A0" 240
+cap "BL" "WL0" 114
+cap "w_163_n24#" "notBL" 114
+cap "notBL" "GND" 9932
+cap "notBL" "Clk" 480
+cap "w_102_0#" "notQ3" 4364
+cap "A1" "WL0" 960
+cap "BL" "w_83_n83#" 190
+cap "VDD" "w_185_n143#" 1128
+cap "Q0" "notQ0" 480
+cap "Clk" "w_102_0#" 4368
+cap "BL" "WL4" 114
+cap "a_109_n104#" "GND" 8366
+cap "notBL" "notQ1" 628
+cap "w_102_n60#" "notQ2" 4364
+cap "A1" "WL4" 240
+cap "VDD" "w_185_n83#" 1128
+cap "A0" "notA0" 266
+cap "Q5" "w_83_n83#" 376
+cap "notA2" "a_7_n104#" 852
+cap "WL1" "notA1" 742
+cap "WL0" "A2" 1020
+cap "BL" "Q3" 628
+cap "w_185_n143#" "BL" 190
+cap "w_102_n60#" "Clk" 4368
+cap "notA0" "WL0" 1665
+cap "notBL" "WL1" 114
+cap "Q2" "BL" 628
+cap "notBL" "w_61_n83#" 114
+cap "A0" "notA2" 456
+cap "VDD" "BL" 7470
+cap "BL" "w_185_n83#" 190
+cap "w_61_n143#" "notA0" 418
+cap "a_7_n164#" "GND" 6721
+cap "VDD" "w_163_n143#" 987
+cap "notBL" "Q0" 722
+cap "notA0" "WL4" 114
+cap "VDD" "A1" 27453
+cap "notQ5" "GND" 4364
+cap "notA1" "a_7_n104#" 540
+cap "notBL" "WL3" 114
+cap "notQ4" "Q4" 480
+cap "notA2" "WL4" 1440
+cap "w_185_36#" "Q3" 376
+cap "Q1" "w_185_n83#" 376
+cap "w_102_0#" "WL3" 7080
+cap "GND" "Q4" 7000
+cap "notA1" "A0" 152
+cap "VDD" "A2" 12275
+cap "VDD" "notA0" 6156
+cap "WL5" "GND" 7080
+cap "VDD" "w_185_36#" 1128
+cap "w_185_n143#" "notQ0" 2616
+cap "Q5" "BL" 628
+cap "w_163_36#" "Q3" 2616
+cap "BL" "Q1" 628
+cap "w_163_n24#" "notQ2" 564
+cap "notBL" "WL0" 114
+cap "notQ5" "w_61_n83#" 564
+cap "a_109_n164#" "GND" 6486
+cap "VDD" "notA2" 2656
+cap "notA0" "WL7" 247
+cap "notQ4" "GND" 4364
+cap "a_3_n152#" "GND" 6040
+cap "notA1" "WL4" 2316
+cap "VDD" "w_163_n83#" 987
+cap "VDD" "w_163_36#" 987
+cap "notBL" "w_61_n143#" 114
+cap "BL" "w_185_36#" 190
+cap "notBL" "WL4" 114
+cap "a_109_n45#" "A2" 240
+cap "Clk" "GND" 5800
+cap "w_102_n60#" "A0" 4368
+cap "A1" "notA0" 342
+cap "notA1" "a_5_n19#" 38
+cap "notQ1" "GND" 4364
+cap "BL" "notQ0" 722
+cap "w_83_n143#" "Q4" 376
+cap "w_185_n24#" "notQ2" 2616
+cap "notBL" "Q3" 722
+cap "w_163_n143#" "notQ0" 564
+cap "a_7_n164#" "A0" 1080
+cap "VDD" "notA1" 14215
+cap "w_102_0#" "Q3" 7000
+cap "notBL" "Q2" 722
+cap "notA0" "A2" 152
+cap "VDD" "notBL" 6750
+cap "WL1" "GND" 7080
+cap "w_163_n83#" "Q1" 2616
+cap "notQ4" "w_83_n143#" 2616
+cap "Q0" "GND" 7000
+cap "notQ5" "w_83_n83#" 2616
+cap "w_102_n60#" "Q2" 7000
+device mosfet nfet 188 -168 189 -167 2 3 "GND" "WL0" 4 0 "BL" 3 0 "Q0" 3 0
+device mosfet nfet 167 -168 168 -167 2 3 "GND" "WL0" 4 0 "notBL" 3 0 "notQ0" 3 0
+device mosfet nfet 185 -155 186 -154 2 4 "GND" "notQ0" 4 0 "GND" 4 0 "Q0" 4 0
+device mosfet nfet 171 -155 172 -154 2 4 "GND" "Q0" 4 0 "notQ0" 4 0 "GND" 4 0
+device mosfet pfet 188 -136 189 -135 2 4 "w_185_n143#" "notQ0" 4 0 "Q0" 4 0 "VDD" 4 0
+device mosfet nfet 145 -164 146 -163 2 3 "GND" "A0" 4 0 "WL0" 3 0 "a_109_n164#" 3 0
+device mosfet nfet 135 -164 136 -163 2 3 "GND" "A1" 4 0 "a_109_n164#" 3 0 "WL0" 3 0
+device mosfet nfet 125 -164 126 -163 2 3 "GND" "A2" 4 0 "WL0" 3 0 "a_109_n164#" 3 0
+device mosfet nfet 86 -168 87 -167 2 3 "GND" "WL4" 4 0 "BL" 3 0 "Q4" 3 0
+device mosfet nfet 65 -168 66 -167 2 3 "GND" "WL4" 4 0 "notBL" 3 0 "notQ4" 3 0
+device mosfet nfet 107 -164 108 -163 2 3 "GND" "Clk" 4 0 "GND" 3 0 "a_109_n164#" 3 0
+device mosfet pfet 166 -136 167 -135 2 4 "w_163_n143#" "Q0" 4 0 "notQ0" 4 0 "VDD" 4 0
+device mosfet nfet 188 -108 189 -107 2 3 "GND" "WL1" 4 0 "BL" 3 0 "Q1" 3 0
+device mosfet nfet 167 -108 168 -107 2 3 "GND" "WL1" 4 0 "notBL" 3 0 "notQ1" 3 0
+device mosfet nfet 185 -95 186 -94 2 4 "GND" "notQ1" 4 0 "GND" 4 0 "Q1" 4 0
+device mosfet nfet 171 -95 172 -94 2 4 "GND" "Q1" 4 0 "notQ1" 4 0 "GND" 4 0
+device mosfet pfet 188 -76 189 -75 2 4 "w_185_n83#" "notQ1" 4 0 "Q1" 4 0 "VDD" 4 0
+device mosfet nfet 83 -155 84 -154 2 4 "GND" "notQ4" 4 0 "GND" 4 0 "Q4" 4 0
+device mosfet nfet 69 -155 70 -154 2 4 "GND" "Q4" 4 0 "notQ4" 4 0 "GND" 4 0
+device mosfet nfet 145 -104 146 -103 2 3 "GND" "notA0" 4 0 "WL1" 3 0 "a_109_n104#" 3 0
+device mosfet nfet 135 -104 136 -103 2 3 "GND" "A1" 4 0 "a_109_n104#" 3 0 "WL1" 3 0
+device mosfet pfet 107 -138 108 -137 2 4 "VDD" "Clk" 4 0 "VDD" 4 0 "WL0" 4 0
+device mosfet pfet 86 -136 87 -135 2 4 "w_83_n143#" "notQ4" 4 0 "Q4" 4 0 "VDD" 4 0
+device mosfet nfet 43 -164 44 -163 2 3 "GND" "A0" 4 0 "WL4" 3 0 "a_7_n164#" 3 0
+device mosfet nfet 33 -164 34 -163 2 3 "GND" "A1" 4 0 "a_7_n164#" 3 0 "WL4" 3 0
+device mosfet nfet 23 -164 24 -163 2 3 "GND" "notA2" 4 0 "WL4" 3 0 "a_7_n164#" 3 0
+device mosfet nfet 5 -164 6 -163 2 3 "GND" "a_3_n152#" 4 0 "GND" 3 0 "a_7_n164#" 3 0
+device mosfet pfet 64 -136 65 -135 2 4 "w_61_n143#" "Q4" 4 0 "notQ4" 4 0 "VDD" 4 0
+device mosfet nfet 125 -104 126 -103 2 3 "GND" "A2" 4 0 "WL1" 3 0 "a_109_n104#" 3 0
+device mosfet nfet 86 -108 87 -107 2 3 "GND" "WL5" 4 0 "BL" 3 0 "Q5" 3 0
+device mosfet nfet 65 -108 66 -107 2 3 "GND" "WL5" 4 0 "notBL" 3 0 "notQ5" 3 0
+device mosfet nfet 107 -104 108 -103 2 3 "GND" "Clk" 4 0 "GND" 3 0 "a_109_n104#" 3 0
+device mosfet pfet 166 -76 167 -75 2 4 "w_163_n83#" "Q1" 4 0 "notQ1" 4 0 "VDD" 4 0
+device mosfet nfet 188 -49 189 -48 2 3 "w_102_n60#" "WL2" 4 0 "BL" 3 0 "Q2" 3 0
+device mosfet nfet 167 -49 168 -48 2 3 "w_102_n60#" "WL2" 4 0 "notBL" 3 0 "notQ2" 3 0
+device mosfet nfet 185 -36 186 -35 2 4 "w_102_n60#" "notQ2" 4 0 "w_102_n60#" 4 0 "Q2" 4 0
+device mosfet nfet 171 -36 172 -35 2 4 "w_102_n60#" "Q2" 4 0 "notQ2" 4 0 "w_102_n60#" 4 0
+device mosfet pfet 188 -17 189 -16 2 4 "w_185_n24#" "notQ2" 4 0 "Q2" 4 0 "VDD" 4 0
+device mosfet nfet 83 -95 84 -94 2 4 "GND" "notQ5" 4 0 "GND" 4 0 "Q5" 4 0
+device mosfet nfet 69 -95 70 -94 2 4 "GND" "Q5" 4 0 "notQ5" 4 0 "GND" 4 0
+device mosfet pfet 107 -78 108 -77 2 4 "VDD" "Clk" 4 0 "VDD" 4 0 "WL1" 4 0
+device mosfet pfet 86 -76 87 -75 2 4 "w_83_n83#" "notQ5" 4 0 "Q5" 4 0 "VDD" 4 0
+device mosfet nfet 43 -104 44 -103 2 3 "GND" "notA0" 4 0 "WL5" 3 0 "a_7_n104#" 3 0
+device mosfet nfet 33 -104 34 -103 2 3 "GND" "A1" 4 0 "a_7_n104#" 3 0 "WL5" 3 0
+device mosfet nfet 23 -104 24 -103 2 3 "GND" "notA2" 4 0 "WL5" 3 0 "a_7_n104#" 3 0
+device mosfet pfet 5 -138 6 -137 2 4 "VDD" "a_3_n152#" 4 0 "VDD" 4 0 "WL4" 4 0
+device mosfet nfet 5 -104 6 -103 2 3 "GND" "a_3_n152#" 4 0 "GND" 3 0 "a_7_n104#" 3 0
+device mosfet pfet 64 -76 65 -75 2 4 "w_61_n83#" "Q5" 4 0 "notQ5" 4 0 "VDD" 4 0
+device mosfet nfet 145 -45 146 -44 2 3 "w_102_n60#" "A0" 4 0 "WL2" 3 0 "a_109_n45#" 3 0
+device mosfet nfet 135 -45 136 -44 2 3 "w_102_n60#" "notA1" 4 0 "a_109_n45#" 3 0 "WL2" 3 0
+device mosfet nfet 125 -45 126 -44 2 3 "w_102_n60#" "A2" 4 0 "WL2" 3 0 "a_109_n45#" 3 0
+device mosfet nfet 107 -45 108 -44 2 3 "w_102_n60#" "Clk" 4 0 "w_102_n60#" 3 0 "a_109_n45#" 3 0
+device mosfet pfet 5 -78 6 -77 2 4 "VDD" "a_3_n152#" 4 0 "VDD" 4 0 "WL5" 4 0
+device mosfet pfet 166 -17 167 -16 2 4 "w_163_n24#" "Q2" 4 0 "notQ2" 4 0 "VDD" 4 0
+device mosfet nfet 188 11 189 12 2 3 "w_102_0#" "WL3" 4 0 "BL" 3 0 "Q3" 3 0
+device mosfet nfet 167 11 168 12 2 3 "w_102_0#" "WL3" 4 0 "notBL" 3 0 "notQ3" 3 0
+device mosfet nfet 185 24 186 25 2 4 "w_102_0#" "notQ3" 4 0 "w_102_0#" 4 0 "Q3" 4 0
+device mosfet nfet 171 24 172 25 2 4 "w_102_0#" "Q3" 4 0 "notQ3" 4 0 "w_102_0#" 4 0
+device mosfet pfet 188 43 189 44 2 4 "w_185_36#" "notQ3" 4 0 "Q3" 4 0 "VDD" 4 0
+device mosfet nfet 145 15 146 16 2 3 "w_102_0#" "notA0" 4 0 "WL3" 3 0 "a_109_15#" 3 0
+device mosfet nfet 135 15 136 16 2 3 "w_102_0#" "notA1" 4 0 "a_109_15#" 3 0 "WL3" 3 0
+device mosfet pfet 107 -19 108 -18 2 4 "VDD" "Clk" 4 0 "VDD" 4 0 "WL2" 4 0
+device mosfet nfet 125 15 126 16 2 3 "w_102_0#" "A2" 4 0 "WL3" 3 0 "a_109_15#" 3 0
+device mosfet nfet 107 15 108 16 2 3 "w_102_0#" "Clk" 4 0 "w_102_0#" 3 0 "a_109_15#" 3 0
+device mosfet pfet 166 43 167 44 2 4 "w_163_36#" "Q3" 4 0 "notQ3" 4 0 "VDD" 4 0
+device mosfet pfet 107 41 108 42 2 4 "VDD" "Clk" 4 0 "VDD" 4 0 "WL3" 4 0
+subcap "A1" -53406
+subcap "notA2" -10454
+subcap "WL4" -7136
+subcap "A0" -114484
+subcap "a_3_n152#" -13732
+subcap "VDD" -206048
+subcap "notQ4" -1304
+subcap "A2" -44689
+subcap "WL5" -7136
+subcap "notA0" -44000
+cap "dynamic_nor3_simple_1/a_n3_11#" "dynamic_nor3_simple_1/a_n26_6#" 540
+cap "dynamic_nor3_simple_1/a_n26_6#" "dynamic_nor3_simple_1/a_n10_4#" 852
+cap "dynamic_nor3_simple_1/w_n33_n9#" "dynamic_nor3_simple_1/a_n30_18#" 2696
+cap "inverter_2/a_1_0#" "dynamic_nor3_simple_1/a_n30_18#" 76
+cap "dynamic_nor3_simple_1/a_n26_6#" "dynamic_nor3_simple_1/w_n33_n9#" -376
+cap "dynamic_nor3_simple_1/w_n33_n9#" "dynamic_nor3_simple_1/a_10_4#" 3174
+cap "dynamic_nor3_simple_1/a_n3_11#" "dynamic_nor3_simple_1/a_2_6#" 1056
+cap "dynamic_nor3_simple_1/a_2_6#" "dynamic_nor3_simple_1/a_n10_4#" 720
+cap "inverter_2/a_1_0#" "dynamic_nor3_simple_1/a_2_6#" 360
+cap "dynamic_nor3_simple_1/a_n3_11#" "dynamic_nor3_simple_1/w_n33_n9#" 958
+cap "dynamic_nor3_simple_1/w_n33_n9#" "dynamic_nor3_simple_1/a_n10_4#" 1328
+cap "inverter_1/w_n6_14#" "inverter_1/a_1_0#" 304
+cap "dynamic_nor3_simple_1/a_n26_6#" "dynamic_nor3_simple_1/a_10_4#" 240
+subcap "WL1" -11357
+subcap "WL6" -1150
+subcap "notA1" -28323
+subcap "w_102_n60#" -1786
+cap "SRAM_6t_1/w_n2_27#" "notA0" 228
+cap "notA0" "SRAM_6t_1/w_n2_n5#" 798
+subcap "notQ2" -1464
+subcap "Clk" -52140
+cap "dynamic_nor3_simple_0/a_n26_6#" "dynamic_nor3_simple_0/a_n3_11#" 1572
+cap "dynamic_nor3_simple_0/a_10_4#" "dynamic_nor3_simple_1/a_n30_18#" 38
+cap "dynamic_nor3_simple_0/a_n10_4#" "dynamic_nor3_simple_0/w_n33_n9#" 1328
+cap "dynamic_nor3_simple_0/a_n3_11#" "dynamic_nor3_simple_1/w_n33_32#" 2953
+cap "dynamic_nor3_simple_0/w_n33_32#" "dynamic_nor3_simple_1/a_n30_18#" 1508
+cap "dynamic_nor3_simple_0/w_n33_n9#" "dynamic_nor3_simple_1/a_n30_18#" 2696
+cap "dynamic_nor3_simple_0/a_10_4#" "inverter_0/a_1_0#" 2880
+cap "dynamic_nor3_simple_0/a_n10_4#" "dynamic_nor3_simple_0/a_n26_6#" 852
+cap "dynamic_nor3_simple_0/a_n3_11#" "dynamic_nor3_simple_0/a_2_6#" 5625
+cap "dynamic_nor3_simple_0/a_10_4#" "dynamic_nor3_simple_0/a_2_6#" 1124
+cap "dynamic_nor3_simple_1/a_n26_32#" "dynamic_nor3_simple_0/a_n3_11#" 382
+cap "dynamic_nor3_simple_0/a_n10_4#" "dynamic_nor3_simple_1/w_n33_32#" 1328
+cap "dynamic_nor3_simple_0/a_10_4#" "inverter_0/w_n6_14#" 1024
+cap "dynamic_nor3_simple_0/a_10_4#" "dynamic_nor3_simple_0/w_n33_32#" 3956
+cap "dynamic_nor3_simple_0/a_10_4#" "inverter_1/w_n6_14#" 720
+cap "dynamic_nor3_simple_0/a_10_4#" "dynamic_nor3_simple_0/w_n33_n9#" 664
+cap "dynamic_nor3_simple_0/a_n3_11#" "dynamic_nor3_simple_0/w_n33_n9#" 2656
+cap "dynamic_nor3_simple_1/w_n33_32#" "dynamic_nor3_simple_1/a_n30_18#" 1508
+subcap "WL2" -20287
+subcap "WL7" -1150
+subcap "WL3" -8960
+subcap "w_102_0#" -2350
+cap "SRAM_6t_0/w_n2_27#" "SRAM_6t_0/a_1_36#" 47
+cap "SRAM_6t_1/w_20_27#" "SRAM_6t_1/a_1_36#" 47
+cap "notA0" "SRAM_6t_1/w_n2_27#" 323
+cap "SRAM_6t_0/a_1_36#" "SRAM_6t_0/w_20_27#" 47
+cap "notA0" "SRAM_6t_1/a_n1_34#" 76
+cap "SRAM_6t_1/a_1_36#" "notA0" 270
+cap "SRAM_6t_0/a_1_n5#" "SRAM_6t_0/a_1_36#" -135
+cap "SRAM_6t_0/a_23_n5#" "SRAM_6t_0/a_1_36#" -135
+cap "SRAM_6t_0/a_1_n5#" "SRAM_6t_1/a_1_36#" -135
+cap "SRAM_6t_1/a_1_36#" "SRAM_6t_1/w_n2_27#" 47
+cap "SRAM_6t_1/a_1_36#" "SRAM_6t_0/a_23_n5#" -135
+merge "SRAM_6t_0/a_n2_2#" "dynamic_nor3_simple_0/a_n26_32#" -1263 0 0 0 0 -2 -6 0 0 0 0 0 0 -15 -30 0 0 0 0
+merge "dynamic_nor3_simple_0/a_n26_32#" "dynamic_nor3_simple_0/a_2_6#"
+merge "dynamic_nor3_simple_0/a_2_6#" "m1_38_18#"
+merge "m1_38_18#" "WL7"
+merge "SRAM_6t_1/a_1_36#" "SRAM_6t_0/a_1_36#" -24064 -160 -160 -180 -162 0 0 0 0 0 0 0 0 -1240 -736 0 0 -1408 -360
+merge "SRAM_6t_0/a_1_36#" "inverter_0/w_n6_14#"
+merge "inverter_0/w_n6_14#" "dynamic_nor3_simple_0/w_n33_32#"
+merge "dynamic_nor3_simple_0/w_n33_32#" "dynamic_nor3_simple_1/w_n33_32#"
+merge "dynamic_nor3_simple_1/w_n33_32#" "inverter_2/w_n6_14#"
+merge "inverter_2/w_n6_14#" "inverter_1/w_n6_14#"
+merge "inverter_1/w_n6_14#" "inverter_3/w_n6_14#"
+merge "inverter_3/w_n6_14#" "VDD"
+merge "SRAM_6t_0/w_n2_n5#" "inverter_0/w_n6_n8#" -1316 0 0 0 0 0 0 0 0 0 0 0 0 -24 -28 0 0 0 0
+merge "inverter_0/w_n6_n8#" "dynamic_nor3_simple_0/w_n33_n9#"
+merge "dynamic_nor3_simple_0/w_n33_n9#" "SRAM_6t_1/w_n2_n5#"
+merge "SRAM_6t_1/w_n2_n5#" "inverter_2/w_n6_n8#"
+merge "inverter_2/w_n6_n8#" "inverter_1/w_n6_n8#"
+merge "inverter_1/w_n6_n8#" "dynamic_nor3_simple_1/w_n33_n9#"
+merge "dynamic_nor3_simple_1/w_n33_n9#" "inverter_3/w_n6_n8#"
+merge "inverter_3/w_n6_n8#" "GND"
+merge "GND" "m1_52_n60#"
+merge "m1_52_n60#" "w_102_n60#"
+merge "w_102_n60#" "m1_52_0#"
+merge "m1_52_0#" "m1_0_8#"
+merge "m1_0_8#" "w_102_0#"
+merge "SRAM_6t_1/a_n2_2#" "dynamic_nor3_simple_1/a_n26_32#" -1263 0 0 0 0 -2 -6 0 0 0 0 0 0 -15 -30 0 0 0 0
+merge "dynamic_nor3_simple_1/a_n26_32#" "dynamic_nor3_simple_1/a_2_6#"
+merge "dynamic_nor3_simple_1/a_2_6#" "m1_38_n42#"
+merge "m1_38_n42#" "WL6"
+merge "SRAM_6t_0/a_1_n5#" "inverter_0/a_1_0#" -6247 -25 -22 0 0 0 0 0 0 0 0 0 0 -52 -50 -523 -370 0 0
+merge "inverter_0/a_1_0#" "SRAM_6t_1/a_1_n5#"
+merge "SRAM_6t_1/a_1_n5#" "notBL"
+merge "SRAM_6t_0/a_23_n5#" "inverter_0/a_n5_7#" -6435 -25 -22 0 0 0 0 0 0 0 0 0 0 -56 -44 -523 -370 0 0
+merge "inverter_0/a_n5_7#" "SRAM_6t_1/a_23_n5#"
+merge "SRAM_6t_1/a_23_n5#" "BL"
+merge "inverter_1/a_n5_7#" "dynamic_nor3_simple_1/a_10_4#" -10786 0 0 0 0 -114 -116 0 0 0 0 0 0 -48 -40 -16 -16 0 0
+merge "dynamic_nor3_simple_1/a_10_4#" "A0"
+merge "dynamic_nor3_simple_0/a_n30_18#" "Clk" -16830 0 0 0 0 -168 -178 0 0 0 0 0 0 -28 -22 0 0 0 0
+merge "Clk" "dynamic_nor3_simple_1/a_n30_18#"
+merge "dynamic_nor3_simple_1/a_n30_18#" "a_3_n152#"
+merge "a_3_n152#" "a_5_n19#"
+merge "dynamic_nor3_simple_0/a_10_4#" "inverter_1/a_1_0#" -23480 0 0 0 0 -68 -64 0 0 0 0 0 0 -112 -96 -549 -380 0 0
+merge "inverter_1/a_1_0#" "notA0"
+merge "dynamic_nor3_simple_0/a_n10_4#" "dynamic_nor3_simple_1/a_n10_4#" -6266 0 0 0 0 0 0 0 0 0 0 0 0 -8 -20 -32 -32 0 0
+merge "dynamic_nor3_simple_1/a_n10_4#" "inverter_3/a_1_0#"
+merge "inverter_3/a_1_0#" "notA2"
+merge "dynamic_nor3_simple_0/a_n3_11#" "inverter_2/a_1_0#" -22211 0 0 0 0 -68 -64 0 0 0 0 0 0 -104 -84 -664 -356 0 0
+merge "inverter_2/a_1_0#" "dynamic_nor3_simple_1/a_n3_11#"
+merge "dynamic_nor3_simple_1/a_n3_11#" "notA1"
+merge "inverter_3/a_n5_7#" "A2" -27321 0 0 0 0 -328 -329 0 0 0 0 0 0 -144 -112 -84 -74 0 0
+merge "inverter_2/a_n5_7#" "A1" -5180 0 0 0 0 -60 -58 0 0 0 0 0 0 -62 -56 -24 -28 0 0

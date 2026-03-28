@@ -1,0 +1,118 @@
+.INC models_0.25.sp
+.option scale=0.0625u
+.param t=1000n
+
+*---- Actual test ----
+Vdd VDD 0 DC 2.5
+VA0 A0 0 PULSE (0 2.5 {t} 1p 1p {t} {2*t})
+VA1 A1 0 PULSE (0 2.5 {2*t} 1p 1p {2*t} {4*t})
+VA2 A2 0 PULSE (0 2.5 {4*t} 1p 1p {4*t} {8*t})
+VClk Clk 0 PULSE (0 2.5 {8*t} 1p 1p {8*t} {16*t})
+
+*--- SRAM 0
+*VA2 A2 0 DC 2.5
+*VA1 A1 0 DC 
+*VA0 A0 0 DC 0
+
+*--- SRAM 1
+*VA2 A2 0 DC 2.5
+*VA1 A1 0 DC 0
+*VA0 A0 0 DC 0
+
+*--- SRAM 2
+*VA2 A2 0 DC 0
+*VA1 A1 0 DC 2.5
+*VA0 A0 0 DC 0
+
+*--- SRAM 3
+*VA2 A2 0 DC 0
+*VA1 A1 0 DC 2.5
+*VA0 A0 0 DC 2.5
+
+*--- SRAM 4
+*VA2 A2 0 DC 2.5
+*VA1 A1 0 DC 0
+*VA0 A0 0 DC 0
+
+*--- SRAM 5
+*VA2 A2 0 DC 2.5
+*VA1 A1 0 DC 0
+*VA0 A0 0 DC 2.5
+
+*--- SRAM 6
+*VA2 A2 0 DC 2.5
+*VA1 A1 0 DC 2.5
+*VA0 A0 0 DC 0
+
+*--- SRAM 7
+*VA2 A2 0 DC 2.5
+*VA1 A1 0 DC 2.5
+*VA0 A0 0 DC 2.5
+
+VBL BL 0 PWL(
++    0n 0
++    4.9n 0  5n 2.5
++    14.9n 2.2   15n 2.5
++    24.9n 2.2   25n 0
++    34.9n 0     35n 2.5
++    38n 0       45n 0
++)
+*SRAM2 WRITE 1 AND READ IT, THEN SRAM7 WRITE 0 AND READ IT
+VBL BL 0 PWL(
+* SRAM 2 PART
++    0n 0
++    6000n 0  
++    6001n 2.5   16000n 2.2  
++    22000n 2.2   22001n 2.5 
++    29000 0    32000n 0
+* SRAM 7 PART
++    38000n 0
++    54000n 0   54001n 2.5 
++    61000n 0    64000n 0
++)
+
+VnBL notBL 0 PWL(
+* SRAM 2 PART
++    0n 0
++    22000n 0  22001n 2.5  
++    29000n 0     32000n 0
+* SRAM 7 PART
++    38000n 0
++    38001n 2.5   48000n 2.2 
++    54000n 2.5  54001n 2.5  
++    61000n 0     64000n 0
++)
+
+VA0 A0 0 PWL (0n 0   32000n 0  32001n 2.5 64000n 2.5)
+VA1 A1 0 PWL (0n 2.5 32000n 2.5  32001n 2.5 64000n 2.5)
+VA2 A2 0 PWL (0n 0   32000n 0  32001n 2.5 64000n 2.5)
+.ic v(Q2) 0 
+.ic v(Q7) 1
+* --- notBL timing ---
+* WRITE 1: notBL = 0V (0–10ns)
+* READ 1: float (10–20ns)
+* WRITE 0: notBL = 2.5V (20–30ns)
+* READ 0: float (30–40ns)
+
+VnBL notBL 0 PWL(
++    0n 0
++    14.9n 0  15n 2.5
++    18n 0    24.9n 0
++    25n 2.5  34.9n 2.2
++    35n 2.5  45n 2.2
++)
+.tran 0.001 {16*t}
+.control
+    run
+    *plot v(WL0) v(WL1)+4 v(WL2)+8 v(WL3)+12 v(WL4)+16 v(WL5)+20 v(WL6)+24 v(WL7)+28
+    *plot v(notA0) v(notA1)+4 v(notA2)+8 v(Clk)+12 v(A0)+16 v(A1)+20 v(A2)+24  
+    plot v(WL0) v(WL1)+4 v(WL2)+8 v(WL3)+12 v(WL4)+16 v(WL5)+20 v(WL6)+24 v(WL7)+28
+    plot v(Clk) v(A0)+4 v(A1)+8 v(A2)+12 v(WL0)+16
+    plot v(Clk) v(A0)+4 v(A1)+8 v(A2)+12 v(WL1)+16
+    plot v(Clk) v(A0)+4 v(A1)+8 v(A2)+12 v(WL2)+16
+    plot v(Clk) v(A0)+4 v(A1)+8 v(A2)+12 v(WL3)+16
+    plot v(Clk) v(A0)+4 v(A1)+8 v(A2)+12 v(WL4)+16
+    plot v(Clk) v(A0)+4 v(A1)+8 v(A2)+12 v(WL5)+16
+    plot v(Clk) v(A0)+4 v(A1)+8 v(A2)+12 v(WL6)+16
+    plot v(Clk) v(A0)+4 v(A1)+8 v(A2)+12 v(WL7)+16
+.endc
