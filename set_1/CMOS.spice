@@ -1,0 +1,45 @@
+* SPICE3 file created from CMOS.ext - technology: scmos
+.include models_0.25.sp
+.option scale=1u
+
+*(d g s b)
+M1000 out in gnd gnd CMOSN w=3 l=2
++  ad=19 pd=18 as=19 ps=18
+M1001 out in vdd vdd CMOSP w=3 l=2
++  ad=19 pd=18 as=19 ps=18
+C0 in 0 2.69fF
+
+Vddd vdd 0 DC 2.5
+
+*200ps = 0.2ns
+Vin in 0 PWL(
++ 0     0
++ 1n   0
++ 1.2n 2.5
++ 3ns   2.5
++ 3.2n 0
++ 5n   0
+)
+
+.tran 10p 6n
+
+*------MEASURMENTS------*
+* For propagation delay
+* input rising and output falling
+.meas tran tPHL trig v(in) val=1.25 rise=1 targ v(out) val=1.25 fall=1
+
+* input falling and output rising
+.meas tran tPLH trig v(in) val=1.25 fall=1 targ v(out) val=1.25 rise=1
+
+*For rise/fall times 10%-90%
+.meas tran t_out_fall trig v(out) val=2.25 fall=1 targ v(out) val=0.25 fall=1
+.meas tran t_out_rise trig v(out) val=0.25 rise=1 targ v(out) val=2.25 rise=1
+
+
+.control
+	run
+	plot v(in) v(out)
+	measlist
+.endc
+
+.end
