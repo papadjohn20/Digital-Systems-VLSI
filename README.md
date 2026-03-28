@@ -14,7 +14,7 @@
 
 </div>
 
-This repository contains a comprehensive series of assignments and projects for the **VLSI Design** course ECE327. The work covers the entire design flow of CMOS digital circuits: from transistor characterization and logic gate layout to the design of complex systems like **Memory Cells (SRAM)** and **Decoders**.
+This repository contains a comprehensive series of assignments and projects for the **Digital Systems VLSI** course ECE327. The work covers the entire design flow of CMOS digital circuits: from transistor characterization and logic gate layout to the design of complex systems like **Memory Cells (SRAM)** and **Decoders**.
 
 ---
 <div align=center>
