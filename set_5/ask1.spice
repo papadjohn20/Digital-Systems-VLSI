@@ -1,0 +1,40 @@
+*Latch (Enable when CLK=0)
+.INC models_025.sp
+
+VDD vdd 0 2.5
+
+* Data input (D)
+VD D 0 PULSE(0 2.5 0 50p 50p 5n 10n)
+* notD
+Mpd notD D vdd vdd CMOSP W=18u L=0.18u
+Mnd notD D 0   0   CMOSN W=6u L=0.18u
+
+* Clock
+VCLK CLK 0 PULSE(0 2.5 0 50p 50p 10n 20n)
+* notCLK
+Mpclk notCLK CLK vdd vdd CMOSP W=18u L=0.18u
+Mnclk notCLK CLK 0   0   CMOSN W=6u L=0.18u
+
+**** TRANSMISSION GATE ****
+* PMOS controlled by CLK
+Mtg_pmos X CLK notD vdd CMOSP W=18u L=0.18u
+* NMOS controlled by notCLK
+Mtg_nmos X notCLK notD 0 CMOSN W=6u L=0.18u
+
+**** STRONG INVERTER ****
+Mp1 Q X vdd vdd CMOSP W=18u L=0.18u
+Mn1 Q X 0   0   CMOSN W=6u L=0.18u
+
+**** WEAK INVERTER ****
+Mp2 X Q vdd vdd CMOSP W=9u L=0.18u
+Mn2 X Q 0   0   CMOSN W=3u L=0.18u
+
+.tran 10p 50n
+
+.control
+    run
+    plot V(D) V(notD)+4
+    plot V(CLK) V(notCLK)+4
+    plot V(D) V(CLK)+4 V(X)+8 V(Q)+12
+.endc
+.end

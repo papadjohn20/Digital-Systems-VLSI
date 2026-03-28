@@ -1,0 +1,132 @@
+* Master-Slave Flip-Flop (Negative Edge Triggered)
+.INC models_025.sp
+
+VDD vdd 0 2.5
+
+* Data input
+*VD D 0 PULSE(0 2.5 1n 200p 200p 10n 20n) // rise/fall time 200ps
+*VD D 0 PULSE(0 2.5 1n 400p 400p 10n 20n) // rise/fall time 400ps
+
+*---FOR SETUP--- 
+*.param tD = 6.195n
+*VD D 0 PULSE(0 2.5 {tD} 200p 200p 10n 20n)
+*.param tD = 6.169n
+*.param tD = 6.17n *causes setup problem
+*VD D 0 PULSE(0 2.5 {tD} 400p 400p 10n 20n)
+
+*---FOR HOLD--- 
+*.param tD = 6.21n
+*VD D 0 PULSE(0 2.5 {tD} 200p 200p 10n 20n)
+.param tD = 6.20n
+*.param tD = 6.21n *causes hold problem
+VD D 0 PULSE(0 2.5 {tD} 400p 400p 10n 20n)
+
+* Clock
+VCLK CLK 0 PULSE(2.5 0 1n 200p 200p 5n 10n)
+
+* g1
+Mp_g1a CLK1 CLK vdd vdd CMOSP W=9u L=0.18u
+Mn_g1a CLK1 CLK 0   0   CMOSN W=3u L=0.18u
+
+* g1
+Mp_g1b CLK2 CLK1 vdd vdd CMOSP W=9u L=0.18u
+Mn_g1b CLK2 CLK1 0   0   CMOSN W=3u L=0.18u
+
+* notCLK
+Mpclk_not notCLK CLK2 vdd vdd CMOSP W=18u L=0.18u
+Mnclk_not notCLK CLK2 0   0   CMOSN W=6u L=0.18u
+
+* CLKbuf
+Mpclk_buf CLKbuf notCLK vdd vdd CMOSP W=18u L=0.18u
+Mnclk_buf CLKbuf notCLK 0   0   CMOSN W=6u L=0.18u
+
+************* MASTER LATCH **********************
+* Transparent when CLK = 0
+************************************************
+
+* Transmission Gate
+MtgM_p XM CLKbuf D vdd CMOSP W=18u L=0.18u
+MtgM_n XM notCLK D 0   CMOSN W=6u  L=0.18u
+
+* Strong inverter
+MpM1 QM XM vdd vdd CMOSP W=18u L=0.18u
+MnM1 QM XM 0   0   CMOSN W=6u  L=0.18u
+
+* Weak inverter
+MpM2 XM QM vdd vdd CMOSP W=9u L=0.18u
+MnM2 XM QM 0   0   CMOSN W=3u L=0.18u
+
+************* SLAVE LATCH ***********************
+* Transparent when CLK = 1
+************************************************
+
+* Transmission Gate
+MtgS_p XS notCLK QM vdd CMOSP W=18u L=0.18u
+MtgS_n XS CLKbuf QM 0   CMOSN W=6u  L=0.18u
+
+* Strong inverter
+MpS1 Q XS vdd vdd CMOSP W=18u L=0.18u
+MnS1 Q XS 0   0   CMOSN W=6u  L=0.18u
+
+* Weak inverter
+MpS2 XS Q vdd vdd CMOSP W=9u L=0.18u
+MnS2 XS Q 0   0   CMOSN W=3u L=0.18u
+
+*Cg1 Q 0 1fF
+Cg1_2x Q 0 2fF
+
+.tran 10p 20n
+
+.control
+    run
+    *plot V(CLK) V(notCLK)+4 V(CLKbuf)+8
+    *plot V(D) V(CLK)+4 V(XM)+8 V(QM)+12 V(XS)+16 V(Q)+20
+    *plot V(D) V(CLK)+4 V(Q)+4
+    plot V(D) V(Qm)+4 V(Q) +8
+    plot V(D) V(CLK) V(Qm) V(Q)
+.endc
+
+************ CLK-> Q ************
+.measure tran t_clk_q_lh TRIG V(CLK) VAL=1.25 RISE=1 TARG V(Q) VAL=1.25 RISE=1
+.measure tran t_clk_q_hl TRIG V(CLK) VAL=1.25 RISE=2 TARG V(Q) VAL=1.25 FALL=1
+*RESULTS
+* ------------- WITH Cg1 AND D rise/fall 200p and 400p  -------------
+*t_clk_q_lh          =  2.964129e-10 targ=  6.596413e-09 trig=  6.300000e-09
+*t_clk_q_hl          =  3.043960e-10 targ=  1.660440e-08 trig=  1.630000e-08
+
+* ------------- WITH Cg1_2x AND D rise/fall 200p and 400p -------------
+*t_clk_q_lh          =  2.969665e-10 targ=  5.596967e-09 trig=  5.300000e-09
+*t_clk_q_hl          =  3.050640e-10 targ=  1.560506e-08 trig=  1.530000e-08
+
+************ QM AND Q RISE/FALL TIMES ************ 
+.measure tran tr_qm  TRIG V(QM) VAL=0.25 RISE=1 TARG V(QM) VAL=2.25 RISE=1
+.measure tran tf_qm  TRIG V(QM) VAL=2.25 FALL=1 TARG V(QM) VAL=0.25 FALL=1
+
+.measure tran tr_q   TRIG V(Q) VAL=0.25 RISE=1 TARG V(Q) VAL=2.25 RISE=1
+.measure tran tf_q   TRIG V(Q) VAL=2.25 FALL=1 TARG V(Q) VAL=0.25 FALL=1
+*RESULTS
+* ------------- WITH Cg1 AND D rise/fall 200p -------------
+*tr_qm               =  4.933977e-09 targ=  1.144074e-08 trig=  6.506765e-09
+*tf_qm               =  5.826000e-11 targ=  1.420141e-09 trig=  1.361881e-09
+*tr_q                =  7.024504e-11 targ=  6.628434e-09 trig=  6.558189e-09
+*tf_q                =  7.677451e-11 targ=  1.663380e-08 trig=  1.655702e-08
+
+* ------------- WITH Cg1 AND D rise/fall 400p  -------------
+*tr_qm               =  5.253720e-09 targ=  1.176049e-08 trig=  6.506765e-09
+*tf_qm               =  5.898566e-11 targ=  1.433628e-09 trig=  1.374642e-09
+*tr_q                =  7.024504e-11 targ=  6.628434e-09 trig=  6.558189e-09
+*tf_q                =  7.677451e-11 targ=  1.663380e-08 trig=  1.655702e-08
+
+* ------------- WITH Cg1_2x AND D rise/fall 200p -------------
+*tr_qm               =  4.933977e-09 targ=  1.144074e-08 trig=  6.506765e-09
+*tf_qm               =  5.825999e-11 targ=  1.420141e-09 trig=  1.361881e-09
+*tr_q                =  7.096511e-11 targ=  6.629354e-09 trig=  6.558389e-09
+*tf_q                =  7.735610e-11 targ=  1.663461e-08 trig=  1.655725e-08
+
+* ------------- WITH Cg1_2x AND D rise/fall 400p -------------
+*tr_qm               =  5.253720e-09 targ=  1.176049e-08 trig=  6.506765e-09
+*tf_qm               =  5.898564e-11 targ=  1.433628e-09 trig=  1.374642e-09
+*tr_q                =  7.096511e-11 targ=  6.629354e-09 trig=  6.558389e-09
+*tf_q                =  7.735610e-11 targ=  1.663461e-08 trig=  1.655725e-08
+
+.end
