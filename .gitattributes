@@ -1,5 +1,0 @@
-# This file exists to force GitHub to recognize the files
-*.sp linguist-language=Spice
-*.spice linguist-language=Spice
-*.cir linguist-language=Spice
-*.mag linguist-language=Magic
