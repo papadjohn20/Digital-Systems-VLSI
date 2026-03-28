@@ -1,7 +1,6 @@
 * linguist-detectable=false
+*.sp linguist-detectable=false
 
-*.sp linguist-detectable=true
-*.sp linguist-language=Spice
 *.spice linguist-detectable=true
 *.spice linguist-language=Spice
 *.cir linguist-detectable=true
