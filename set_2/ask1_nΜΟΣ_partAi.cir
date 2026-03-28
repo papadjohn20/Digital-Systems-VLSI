@@ -1,0 +1,27 @@
+*Askhsh 1 NMOS part A erwthma i
+.include models_0.25.sp
+*VTO = 0.4238252
+* Vgs: {0.8, 1.2, 2, 2.5}
+.step param VGSval list 0.8 1.2, 2, 2.5
+
+*NMOS
+Mn d g 0 0 CMOSN W=3u L=2u
+
+Vds d 0 DC 0
+Vgs g 0 DC {VGSval}
+
+.DC Vds 0 2.5 0.05
+
+*EXTRA for validation measure current at Vds = Vgs - Vt
+.meas DC Idsat FIND Id(Mn) AT=VGSval - 0.4238252
+
+*derivative of ID(Mn) AT Vds = Vgs - Vt
+.meas DC dI_dV DERIV Id(Mn)  AT= VGSval - 0.4238252
+
+*Measure Resistance
+.meas DC Req PARAM= 1.0 / dI_dV
+
+.PROBE Id(Mn)
+.end
+
+

@@ -1,0 +1,30 @@
+*Askhsh 1 part B NMOS
+.include models_0.25.sp
+
+.param VDD=2.5
+.param Cval=0.1p
+
+*d = drain, g = gate, s = 0(ground)
+Vdd vdd 0 DC {VDD}
+C d 0 {Cval}
+
+*Precharge C to VDD
+.ic V(d)={VDD}
+
+*NMOS
+M1 d g 0 0 CMOSN w=3u l=2u
+
+Vg g 0 DC 2.5
+
+.tran 0.001n 5n
+*------MEASURMENTS------*
+* t_half = ln(2)*Req*C <=> Req = t_half/(ln2*C)
+* Measure time when Vd reaches 50% VDD
+.meas tran t_half WHEN V(d) = VDD/2 FALL=1
+
+*Calculate Req
+.meas tran Req PARAM  t_half/(0.69*Cval)
+
+* Print results in console
+.PROBE V(d) V(g) V(vdd)
+.end

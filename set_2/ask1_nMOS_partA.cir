@@ -1,0 +1,19 @@
+*Askhsh 1 NMOS
+
+.include models_0.25.sp
+.param VT = 0.4238252
+
+*(d g s b)
+Mn 2 1 0 0 CMOSN w=3u l=2u
+
+Vds 2 0 DC 0
+Vgs 1 0 DC {Vgsval}
+
+.step param Vgsval 0 2.5 0.25
+
+.DC Vds 0 2.5 0.05
+
+.meas DC Vds_sat PARAM=Vgsval-VT
+.meas DC Id_sat FIND Id(Mn) AT=Vds_sat
+.PROBE ID(Mn)
+.END

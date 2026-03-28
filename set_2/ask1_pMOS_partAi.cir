@@ -1,0 +1,25 @@
+*Askhsh 1 PMOS part A erwthma i
+.include models_0.25.sp
+* Vgs: {-0.8, -1.2, -2, -2.5} *VTO = -0.5536085
+.step param VGSval list -0.8 -1.2 -2 -2.5
+
+*PMOS
+Mp d g s s CMOSP W=3u L=2u
+
+Vss s 0 DC 2.5
+Vds d s DC 0
+Vgs g s DC {VGSval}
+
+.DC Vds -2.5 0 0.05
+
+*EXTRA Measure current at Vds = Vgs - Vt
+.meas DC Idsat FIND Id(Mp) AT=VGSval + 0.5536085
+
+*derivative of ID(Mp) AT Vds = Vgs - Vt
+.meas DC dI_dV DERIV (Id(Mp)) AT= VGSval + 0.5536085
+
+*Measure Resistance
+.meas DC Req PARAM= 1.0 / dI_dV
+
+.PROBE Id(Mp)
+.end

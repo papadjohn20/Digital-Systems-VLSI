@@ -1,0 +1,24 @@
+*Askhsh 1 NMOS part A erwthma ii
+.include models_0.25.sp
+*VTO = 0.4238252
+
+* Vgs: {0.8, 1.2, 2, 2.5}
+.step param VGSval list 0.8 1.2 2 2.5
+
+*NMOS
+Mn d g 0 0 CMOSN W=3u L=2u
+
+Vds d 0 DC 0
+Vgs g 0 DC {VGSval}
+
+.DC Vds 0 2.5 0.05
+
+* Measure current at Vds = 2.5 V
+.meas DC Idsatmax FIND Id(Mn) AT=2.5
+.meas DC Idsatmin FIND Id(Mn) AT=VGSval - 0.4238252
+* Calculate Req
+.meas DC Req PARAM=(2.5-(VGSval - 0.4238252))/(Idsatmax - Idsatmin)
+
+.PROBE Id(Mn)
+.end
+
