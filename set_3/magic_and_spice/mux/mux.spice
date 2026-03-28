@@ -1,0 +1,44 @@
+* SPICE3 file created from mux.ext - technology: scmos
+.INC models_0.25.sp
+.option scale=0.0625u
+.param t=1000n
+
+*--- S ---
+M1000 out S A VDD CMOSP w=10 l=2
++  ad=76 pd=60 as=38 ps=30
+M1004 VDD S notS VDD CMOSP w=10 l=2
++  ad=38 pd=30 as=38 ps=30
+M1005 out S B GND CMOSN w=4 l=2
++  ad=0 pd=0 as=20 ps=18
+
+*--- notS ---
+M1003 out notS B VDD CMOSP w=10 l=2
++  ad=0 pd=0 as=38 ps=30
+M1001 out notS A GND CMOSN w=4 l=2
++  ad=40 pd=36 as=20 ps=18
+M1002 GND S notS GND CMOSN w=4 l=2
++  ad=20 pd=18 as=20 ps=18
+
+C0 GND S 6.27fF
+C1 out VDD 4.04fF
+C2 S VDD 19.47fF
+C3 GND notS 5.41fF
+C4 out 0 3.01fF
+C5 notS 0 8.21fF
+C6 S 0 8.38fF
+
+
+Vdd VDD 0 DC 2.5
+VA A 0 DC 1.5
+VB B 0 DC 0.5
+
+VS S 0 PULSE (0 2.5 {t} 1p 1p {t} {2*t})
+
+
+.tran 0.001 {4*t}
+.control
+    run
+    plot v(out) v(S)+4 v(notS)+8
+.endc
+
+.end

@@ -1,0 +1,57 @@
+* SPICE3 file created from Decoder.ext - technology: scmos
+.INC models_0.25.sp
+.option scale=0.125u
+.param t=1000n
+  
+*---- b3 ----
+*PMOS
+M1000 VDD b3 out VDD CMOSP w=10 l=2
++  ad=184 pd=104 as=136 ps=72
+*NMOS
+M1001 out b3 a_18_n3# GND CMOSN w=16 l=2
++  ad=64 pd=46 as=96 ps=44
+
+*---- b2 ----
+*PMOS
+M1006 out b2 VDD VDD CMOSP w=10 l=2
++  ad=0 pd=0 as=0 ps=0
+*NMOS
+M1007 a_18_n3# b2 a_10_n3# GND CMOSN w=16 l=2
++  ad=0 pd=0 as=0 ps=0
+
+*---- b1 ----
+*PMOS
+M1004 VDD b1 out VDD CMOSP w=10 l=2
++  ad=0 pd=0 as=0 ps=0
+*NMOS
+M1005 a_10_n3# b1 a_2_n3# GND CMOSN w=16 l=2
++  ad=96 pd=44 as=0 ps=0
+
+*---- b0 ----
+*PMOS
+M1002 out b0 VDD VDD CMOSP w=10 l=2
++  ad=0 pd=0 as=0 ps=0
+*NMOS
+M1003 a_2_n3# b0 GND GND CMOSN w=16 l=2
++  ad=96 pd=44 as=64 ps=46
+
+C0 out GND 2.44fF
+C1 b3 0 4.20fF
+C2 b2 0 4.20fF
+C3 b1 0 4.20fF
+C4 out 0 7.33fF
+C5 b0 0 4.20fF
+
+Vdd VDD 0 DC 2.5
+Vb0 b0 0 PULSE (0 2.5 {t} 1p 1p {t} {2*t})
+Vb1 b1 0 PULSE (0 2.5 {2*t} 1p 1p {2*t} {4*t})
+Vb2 b2 0 PULSE (0 2.5 {4*t} 1p 1p {4*t} {8*t})
+Vb3 b3 0 PULSE (0 2.5 {8*t} 1p 1p {8*t} {16*t})
+
+.tran 0.001 {16*t}
+.control
+    run
+    plot v(out) v(b0)+4 v(b1)+8 v(b2)+12 v(b3)+15 
+.endc
+
+.end

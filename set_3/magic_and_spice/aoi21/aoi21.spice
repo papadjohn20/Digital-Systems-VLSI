@@ -1,0 +1,44 @@
+* SPICE3 file created from aoi21.ext - technology: scmos
+.INC models_0.25.sp
+.option scale=0.125u
+.param t=1000n
+
+*---- A ----
+*PMOS
+M1005 a_0_29# A out VDD CMOSP w=19 l=2
++  ad=0 pd=0 as=83 ps=58
+*NMOS
+M1004 out A GND GND CMOSN w=4 l=2
++  ad=0 pd=0 as=0 ps=0
+
+*---- B ----
+*PMOS
+M1000 VDD B a_0_29# VDD CMOSP w=19 l=2
++  ad=118 pd=52 as=197 ps=108
+*NMOS
+M1003 a_8_0# B out GND CMOSN w=8 l=2
++  ad=0 pd=0 as=44 ps=28
+
+*---- C ----
+*PMOS
+M1002 a_0_29# C VDD VDD CMOSP w=19 l=2
++  ad=0 pd=0 as=0 ps=0
+*NMOS
+M1001 GND C a_8_0# GND CMOSN w=8 l=2
++  ad=52 pd=44 as=48 ps=28
+
+C0 a_0_29# 0 3.38fF
+C1 out 0 4.75fF
+
+Vdd VDD 0 DC 2.5
+VC C 0 PULSE (0 2.5 {t} 1p 1p {t} {2*t})
+VB B 0 PULSE (0 2.5 {2*t} 1p 1p {2*t} {4*t})
+VA A 0 PULSE (0 2.5 {4*t} 1p 1p {4*t} {8*t})
+
+.tran 0.001 {8*t}
+.control
+    run
+    plot v(out) v(C)+4 v(B)+8 v(A)+12 
+.endc
+
+.end

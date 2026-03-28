@@ -1,0 +1,54 @@
+* SPICE3 file created from aoi31.ext - technology: scmos
+.INC models_0.25.sp
+.option scale=0.125u
+.param t=1000n
+
+*---- A ----
+*PMOS
+M1004 out A a_9_26# VDD CMOSP w=29 l=2
++  ad=155 pd=70 as=0 ps=0
+*NMOS
+M1001 a_1_0# A GND GND CMOSN w=8 l=2
++  ad=96 pd=56 as=80 ps=54
+
+*---- B ----
+*PMOS
+M1006 VDD B out VDD CMOSP w=10 l=2
++  ad=0 pd=0 as=0 ps=0
+*NMOS
+M1005 out B a_1_0# GND CMOSN w=8 l=2
++  ad=32 pd=26 as=0 ps=0
+
+*---- C ----
+*PMOS
+M1002 a_9_26# C a_1_26# VDD CMOSP w=29 l=2
++  ad=174 pd=70 as=0 ps=0
+*NMOS
+M1003 GND C a_1_0# GND CMOSN w=8 l=2
++  ad=0 pd=0 as=0 ps=0
+
+*---- D ----
+*PMOS
+M1000 a_1_26# D VDD VDD CMOSP w=29 l=2
++  ad=174 pd=70 as=157 ps=98
+*NMOS
+M1007 a_1_0# D GND GND CMOSN w=8 l=2
++  ad=0 pd=0 as=0 ps=0
+
+C0 B VDD 5.48fF
+C1 a_1_0# 0 3.38fF
+C2 out 0 4.65fF
+
+Vdd VDD 0 DC 2.5
+VD D 0 PULSE (0 2.5 {t} 1p 1p {t} {2*t})
+VC C 0 PULSE (0 2.5 {2*t} 1p 1p {2*t} {4*t})
+VB B 0 PULSE (0 2.5 {4*t} 1p 1p {4*t} {8*t})
+VA A 0 PULSE (0 2.5 {8*t} 1p 1p {8*t} {16*t})
+
+.tran 0.001 {16*t}
+.control
+    run
+    plot v(out) v(D)+4 v(C)+8 v(B)+12 v(A)+15 
+.endc
+
+.end

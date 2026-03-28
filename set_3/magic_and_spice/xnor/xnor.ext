@@ -1,0 +1,48 @@
+timestamp 1763668488
+version 8.3
+tech scmos
+style lambda=1.0(scna20_orb)
+scale 1000 1 100
+resistclasses 26670 59550 23860 19690 27260 2000000 49 26 2505830
+node "a_14_0#" 107 0 14 0 ndiff 16 20 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+node "a_2_0#" 107 0 2 0 ndiff 16 20 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+node "OUT" 415 16168 -5 2 ndc 64 52 114 50 0 0 0 0 0 0 0 0 528 272 0 0 0 0
+node "a_n9_46#" 1179 0 -9 46 pdc 0 0 244 146 0 0 0 0 0 0 0 0 204 110 0 0 0 0
+node "A" 1742 23680 16 -2 p 0 0 0 0 300 300 0 0 0 0 0 0 84 58 188 102 0 0
+node "notB" 1302 20480 -24 0 ndiff 32 26 65 48 146 146 0 0 0 0 0 0 328 172 0 0 0 0
+node "notA" 1350 21132 -5 39 pc 32 26 65 48 154 154 0 0 0 0 0 0 280 156 180 98 0 0
+node "B" 1694 23640 -28 27 pc 0 0 0 0 292 292 0 0 0 0 0 0 124 78 124 70 0 0
+node "GND" 1634 0 -35 -8 pw 112 80 96 96 0 0 0 0 0 0 0 0 504 260 0 0 0 0
+node "VDD" 10536 0 -35 45 nw 96 96 244 146 0 0 0 0 0 0 0 0 504 260 0 0 2744 252
+cap "A" "notA" 872
+cap "B" "notB" 960
+cap "notA" "notB" 658
+cap "B" "GND" 2388
+cap "notA" "GND" 2078
+cap "B" "VDD" 2388
+cap "B" "OUT" 240
+cap "notA" "VDD" 1758
+cap "notA" "OUT" 1050
+cap "a_n9_46#" "VDD" 2632
+cap "a_n9_46#" "OUT" 1128
+cap "A" "GND" 2708
+cap "GND" "notB" 1758
+cap "notA" "B" 480
+cap "A" "VDD" 2388
+cap "A" "OUT" 1200
+cap "VDD" "notB" 1758
+cap "OUT" "notB" 240
+cap "OUT" "GND" 4324
+cap "OUT" "VDD" 188
+device mosfet nfet 52 0 53 1 2 8 "GND" "A" 4 0 "notA" 8 0 "GND" 8 0
+device mosfet nfet 16 0 17 1 2 8 "GND" "A" 4 0 "a_14_0#" 8 0 "OUT" 8 0
+device mosfet nfet 12 0 13 1 2 8 "GND" "notB" 4 0 "GND" 8 0 "a_14_0#" 8 0
+device mosfet nfet 4 0 5 1 2 8 "GND" "B" 4 0 "a_2_0#" 8 0 "GND" 8 0
+device mosfet nfet 0 0 1 1 2 8 "GND" "notA" 4 0 "OUT" 8 0 "a_2_0#" 8 0
+device mosfet nfet -26 0 -25 1 2 8 "GND" "B" 4 0 "GND" 8 0 "notB" 8 0
+device mosfet pfet 52 46 53 47 2 19 "VDD" "A" 4 0 "notA" 19 0 "VDD" 19 0
+device mosfet pfet 20 46 21 47 2 19 "VDD" "A" 4 0 "OUT" 19 0 "a_n9_46#" 19 0
+device mosfet pfet 12 46 13 47 2 19 "VDD" "notB" 4 0 "a_n9_46#" 19 0 "OUT" 19 0
+device mosfet pfet 4 46 5 47 2 19 "VDD" "B" 4 0 "VDD" 19 0 "a_n9_46#" 19 0
+device mosfet pfet -4 46 -3 47 2 19 "VDD" "notA" 4 0 "a_n9_46#" 19 0 "VDD" 19 0
+device mosfet pfet -26 46 -25 47 2 19 "VDD" "B" 4 0 "VDD" 19 0 "notB" 19 0

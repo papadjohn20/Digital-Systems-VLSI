@@ -1,0 +1,32 @@
+timestamp 1763728519
+version 8.3
+tech scmos
+style lambda=1.0(scna20_orb)
+scale 1000 1 100
+resistclasses 26670 59550 23860 19690 27260 2000000 49 26 2505830
+node "A" 251 1316 14 0 ndc 20 18 38 30 0 0 0 0 0 0 0 0 84 50 0 0 0 0
+node "out" 739 3008 5 0 ndiff 40 36 76 60 0 0 0 0 0 0 0 0 288 152 0 0 0 0
+node "B" 251 1692 -2 0 ndc 20 18 38 30 0 0 0 0 0 0 0 0 84 50 0 0 0 0
+node "notS" 835 8212 3 8 p 20 18 38 30 106 106 0 0 0 0 0 0 144 88 100 58 0 0
+node "S" 1468 8378 -8 24 pc 0 0 0 0 254 254 0 0 0 0 0 0 100 66 340 178 0 0
+node "GND" 94 0 -8 -14 pw 20 18 16 16 0 0 0 0 0 0 0 0 308 162 0 0 0 0
+node "VDD" 5704 0 -8 14 nw 16 16 38 30 0 0 0 0 0 0 0 0 336 176 0 0 1708 178
+cap "notS" "out" 735
+cap "B" "VDD" 282
+cap "notS" "GND" 5409
+cap "VDD" "out" 4042
+cap "GND" "A" 188
+cap "S" "out" 1020
+cap "GND" "S" 6274
+cap "notS" "A" 240
+cap "notS" "VDD" 1896
+cap "B" "GND" 188
+cap "VDD" "A" 282
+cap "GND" "out" 376
+cap "VDD" "S" 19466
+device mosfet nfet 39 0 40 1 2 4 "GND" "S" 4 0 "notS" 4 0 "GND" 4 0
+device mosfet nfet 19 0 20 1 2 4 "GND" "notS" 4 0 "A" 4 0 "out" 4 0
+device mosfet nfet 3 0 4 1 2 4 "GND" "S" 4 0 "B" 4 0 "out" 4 0
+device mosfet pfet 39 14 40 15 2 10 "VDD" "S" 4 0 "notS" 10 0 "VDD" 10 0
+device mosfet pfet 19 14 20 15 2 10 "VDD" "S" 4 0 "A" 10 0 "out" 10 0
+device mosfet pfet 3 14 4 15 2 10 "VDD" "notS" 4 0 "B" 10 0 "out" 10 0
